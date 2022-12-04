@@ -1,15 +1,12 @@
-from .db import db, environment, SCHEMA, add_prefix_for_prod
+from .db import db
 
 class Post(db.Model):
   __tablename__ = "posts"
 
-  if environment == "production":
-    __table_args__ = {'schema': SCHEMA}
-
   id = db.Column(db.Integer, primary_key=True)
   content_url = db.Column(db.String(255), nullable=False)
   description = db.Column(db.String())
-  user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")), nullable=False)
+  user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
 
   comments = db.relationship('Comment', back_populates='post', cascade="all, delete-orphan")
   likes = db.relationship('Like', back_populates='post', cascade="all, delete-orphan")

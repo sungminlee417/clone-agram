@@ -1,10 +1,7 @@
-from .db import db, environment, SCHEMA, add_prefix_for_prod
+from .db import db
 
 class DirectMessage(db.Model):
   __tablename__ = "direct_messages"
-
-  if environment == "production":
-    __table_args__ = {'schema': SCHEMA}
 
   id = db.Column(db.Integer, primary_key=True)
 
@@ -25,9 +22,9 @@ class DirectMessageMember(db.Model):
       __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     user_active = db.Column(db.Boolean, default=False, nullable=False)
-    direct_message_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("direct_messages.id")), nullable=True)
+    direct_message_id = db.Column(db.Integer, db.ForeignKey("direct_messages.id"), nullable=True)
 
     user = db.relationship("User", backref="direct_message_member")
     direct_message = db.relationship("DirectMessage", back_populates="members")
