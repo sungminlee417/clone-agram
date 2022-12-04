@@ -1,0 +1,26 @@
+.create-comment-form {
+  border-top: 0.1rem solid rgb(219, 219, 219);
+  padding: 1.4rem 2rem;
+  width: 100%;
+}
+
+.create-comment-input {
+  border: none;
+  width: 90%;
+}
+
+.create-comment-submit {
+  color: #77a7ff;
+  cursor: not-allowed;
+  font-weight: bold;
+  width: 10%;
+}
+
+.create-comment-submit.typed:active {
+  color: #77a7ff;
+}
+
+.create-comment-submit.typed {
+  color: rgb(0, 149, 246);
+  cursor: pointer;
+}

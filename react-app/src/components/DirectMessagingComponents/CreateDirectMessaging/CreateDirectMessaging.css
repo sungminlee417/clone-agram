@@ -1,0 +1,159 @@
+.create-direct-messaging-section {
+  animation: container-fade-in 0.2s;
+  background-color: white;
+  border-radius: 1rem;
+  height: 48rem;
+  width: 38rem;
+}
+
+.create-direct-messaging-section header {
+  align-items: center;
+  border-bottom: 0.1rem solid rgb(219, 219, 219);
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.create-direct-messaging-cancel {
+  cursor: pointer;
+  font-size: 1.4rem;
+  left: 2rem;
+  position: absolute;
+}
+
+.create-direct-messaging-submit {
+  color: #0095f6;
+  cursor: not-allowed;
+  font-size: 1.4rem;
+  font-weight: bold;
+  opacity: 0.4;
+  position: absolute;
+  right: 2rem;
+}
+
+.create-direct-messaging-submit.ready {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.create-direct-messaging-section header div {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.create-direct-messaging-search-friends-container {
+  border-bottom: 0.1rem solid rgb(219, 219, 219);
+  display: flex;
+  gap: 1.4rem;
+  padding: 1rem;
+}
+
+.create-direct-messaging-search-friends-container-header {
+  align-items: center;
+  display: flex;
+  font-size: 1.4rem;
+  font-weight: bold;
+  height: 3.2rem;
+}
+
+.create-direct-messaging-selected-search-container {
+  flex-grow: 1;
+}
+
+.create-direct-messaging-selected-friends {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.2rem;
+  gap: 1rem;
+}
+
+.create-direct-messaging-selected-friend {
+  align-items: center;
+  background-color: rgb(224, 241, 255);
+  border-radius: 2rem;
+  color: rgb(0, 149, 246);
+  display: flex;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  height: 3.2rem;
+}
+
+.create-direct-messaging-deselect-friend {
+  color: rgb(0, 149, 246);
+  cursor: pointer;
+}
+
+.create-direct-messaging-search-friends-container-search {
+  flex-grow: 1;
+  height: 100%;
+}
+.create-direct-messaging-search-friends-input {
+  border: none;
+  height: 3.2rem;
+  width: 100%;
+}
+
+.create-direct-messaging-search-friends-list {
+  flex-grow: 1;
+  overflow-y: scroll;
+  padding: 1rem 0;
+}
+
+.create-direct-messaging-search-friend-button {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  width: 100%;
+}
+
+.create-direct-messaging-search-friend-button:hover {
+  background-color: rgb(250, 250, 250);
+}
+
+.create-direct-messaging-search-friend-button:active {
+  background-color: rgb(239, 239, 239);
+}
+.create-direct-messaging-search-friend-info {
+  align-items: center;
+  display: flex;
+  gap: 1.4rem;
+}
+
+.create-direct-messaging-search-friend-photo {
+  border-radius: 100%;
+  height: 4rem;
+  width: 4rem;
+}
+
+.create-direct-messaging-search-friend-username {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.create-direct-messaging-search-friend-button-container {
+  align-items: center;
+  border: 0.13rem solid black;
+  border-radius: 100%;
+  color: white;
+  display: flex;
+  font-size: 1.2rem;
+  justify-content: center;
+  height: 2.2rem;
+  width: 2.2rem;
+}
+
+.create-direct-messaging-search-friend-button-container.selected {
+  border: 0.13rem solid transparent;
+  background-color: rgb(0, 149, 246);
+}
+
+.create-direct-messaging-search-friend-check {
+  display: none;
+}
+
+.create-direct-messaging-search-friend-check.selected {
+  display: block;
+}

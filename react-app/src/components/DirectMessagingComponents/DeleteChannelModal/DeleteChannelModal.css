@@ -1,0 +1,6 @@
+.display-message-details-delete-chat-button {
+  align-self: flex-start;
+  color: rgb(237, 73, 86);
+  cursor: pointer;
+  padding: 2rem;
+}

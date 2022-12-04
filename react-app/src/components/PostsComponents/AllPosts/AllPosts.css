@@ -1,0 +1,15 @@
+.all-posts-section {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.all-posts-container {
+  display: grid;
+  gap: 2.4rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 12rem;
+  place-items: center;
+}

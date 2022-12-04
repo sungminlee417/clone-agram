@@ -1,0 +1,66 @@
+.landing-page-section {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: relative;
+}
+
+.landing-page-content-container {
+  align-items: center;
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+  height: fit-content;
+}
+
+.landing-page-side-image-container {
+  background-image: url("https://cloneagram.s3.us-west-1.amazonaws.com/landing-page-side-image.png");
+  background-position: -4.7rem 0.1rem;
+  background-size: 47rem 63rem;
+  height: 58.2rem;
+  position: relative;
+  width: 38rem;
+}
+
+.landing-page-side-slideshow {
+  opacity: 0;
+  position: absolute;
+  width: 25rem;
+  right: 1.75rem;
+  top: 2.7rem;
+  transition: 2s ease-in-out;
+}
+
+.landing-page-side-slideshow.visible {
+  opacity: 1;
+  transition: 2s ease-in-out;
+}
+
+.login-signup-container {
+  background-color: white;
+  border: 1px solid rgb(219, 219, 219);
+  display: flex;
+  font-size: 1.2rem;
+  gap: 0.3rem;
+  justify-content: center;
+  margin-top: 1rem;
+  padding: 1.6rem;
+  width: 32rem;
+}
+
+.login-signup-container > a {
+  color: rgb(0, 149, 246);
+}
+
+.login-signup-container > a:visited {
+  color: rgb(0, 149, 246);
+}
+
+.landing-page-github {
+  bottom: 1rem;
+  color: black;
+  font-size: 3rem;
+  left: 1rem;
+  position: absolute;
+}

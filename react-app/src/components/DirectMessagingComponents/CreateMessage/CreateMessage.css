@@ -1,0 +1,10 @@
+.create-message-input-container {
+  padding: 2rem;
+}
+
+.create-message-input {
+  border: 0.1rem solid rgb(219, 219, 219);
+  border-radius: 10rem;
+  padding: 1rem 2rem;
+  width: 100%;
+}

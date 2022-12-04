@@ -1,0 +1,50 @@
+#modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+#modal-background {
+  align-items: center;
+  display: flex;
+  position: relative;
+  top: 0;
+  right: 0;
+  justify-content: center;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100vw;
+}
+
+.modal-content {
+  display: flex;
+  height: fit-content;
+  justify-content: center;
+  width: fit-content;
+  z-index: 1;
+}
+
+.modal-content-create-post {
+  height: 80%;
+  position: absolute;
+  margin: 0 auto;
+  width: 70%;
+}
+
+.modal-content-post {
+  display: flex;
+  height: 95%;
+  min-width: 80%;
+  justify-content: center;
+  padding: 0 8rem;
+  width: fit-content;
+  z-index: 1;
+}

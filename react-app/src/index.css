@@ -1,0 +1,107 @@
+/*
+
+GREYS:
+LIGHTEST: rgb(250, 250, 250);
+LIGHT: rgb(219, 219, 219)
+FOCUSED INPUT: rgb(168, 168, 168)
+SEARCH INPUT: rgb(239, 239, 239)
+
+BORDER-RADIUS:
+input: 0.2rem
+button: 0.4rem
+
+BORDERS:
+containers: 0.1rem solid rgb(219, 219, 219);
+
+BUTTON AND SOME LINK COLORS:
+BUTTON BLUE: rgb(0, 149, 246)
+BUTTON BLUE ACTIVE: #77a7ff
+
+FONT SIZE:
+input: 1.2rem
+
+TRANSITION:
+BUTTON .2s
+IMAGE SLIDESHOW 2s
+
+
+ERROR COLOR: rgb(237, 73, 86)
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: rgb(250, 250, 250);
+  font-family: "Rubik", sans-serif;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+input,
+textarea {
+  font-family: "Rubik", sans-serif;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+/********************************/
+/*********KEY FRAMES*************/
+/********************************/
+
+@keyframes container-fade-in {
+  from {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes image-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes container-slide-in {
+  from {
+    transform: translate(-10%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate(0);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,60 @@
+.post-modal-comment-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1rem 2rem;
+  width: 100%;
+}
+
+.post-modal-comment-container:hover .comment-more-options {
+  visibility: visible;
+}
+
+.post-modal-comment-content-container {
+  align-items: flex-start;
+  display: flex;
+  font-size: 1.3rem;
+  gap: 1.4rem;
+}
+
+.post-modal-comment-user-profile {
+  width: 3.2rem;
+}
+
+.post-modal-comment-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  justify-content: center;
+  margin-top: 0.4rem;
+  width: 100%;
+}
+
+.post-modal-comment-text {
+  width: 86%;
+  word-wrap: break-word;
+}
+
+.post-modal-comment-more-details-container {
+  align-items: center;
+  color: rgb(150, 150, 150);
+  display: flex;
+  gap: 0.8rem;
+}
+
+.post-modal-comment-like-button {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  height: 100%;
+  margin-top: 0.4rem;
+}
+
+.post-modal-comment-like-button-filled {
+  align-items: center;
+  color: rgb(237, 73, 86);
+  cursor: pointer;
+  display: flex;
+  height: 100%;
+  margin-top: 0.4rem;
+}

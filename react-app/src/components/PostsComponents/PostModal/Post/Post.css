@@ -1,0 +1,75 @@
+.single-post-container {
+  animation: container-fade-in 0.2s;
+  background-color: white;
+  border-radius: 1rem;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.single-post-content-container {
+  background-color: black;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  width: auto;
+}
+
+.single-post-content {
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+.single-post-description-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 45rem;
+  min-width: 45rem;
+}
+
+.single-post-description-header {
+  align-items: center;
+  border-bottom: 0.1rem solid rgb(219, 219, 219);
+  display: flex;
+  font-size: 1.3rem;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.single-post-owner-link {
+  color: black;
+}
+
+.single-post-description-header-user {
+  align-items: center;
+  display: flex;
+  gap: 1.4rem;
+}
+
+.single-post-description-header-user-profile,
+.single-post-description-user-profile {
+  width: 3.2rem;
+}
+
+.single-post-description-comments-container {
+  flex-grow: 1;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.single-post-description {
+  align-items: flex-start;
+  display: flex;
+  font-size: 1.3rem;
+  gap: 1.4rem;
+  padding: 1rem 2rem;
+  width: 100%;
+}
+
+.single-post-description-text {
+  width: 86%;
+  word-wrap: break-word;
+}

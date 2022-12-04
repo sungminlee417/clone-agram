@@ -1,0 +1,131 @@
+.nav-bar-section {
+  display: flex;
+  position: relative;
+  z-index: 2;
+}
+
+.nav-bar {
+  background-color: white;
+  border-right: 0.1rem solid rgb(219, 219, 219);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 2.4rem 1.4rem 1.4rem 1.4rem;
+  position: sticky;
+  min-width: 22rem;
+  transition: min-width 0.4s;
+}
+
+.nav-links-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  height: 100%;
+  list-style: none;
+  width: 100%;
+}
+
+.homepage-link {
+  /* margin: 0 1rem; */
+  height: 4rem;
+  width: 12rem;
+}
+
+.nav-bar-link {
+  align-items: center;
+  display: flex;
+  gap: 1.5rem;
+  height: 4rem;
+  padding: 1.4rem 0.9rem;
+  transition: 0.2s;
+  /* width: 8rem; */
+}
+
+.nav-bar-link.active {
+  font-weight: bold;
+}
+
+.fa-instagram.nav-bar-icon {
+  animation: image-fade-in 1s ease-in-out;
+  font-size: 2.6rem;
+}
+
+.nav-bar-link.active > .nav-bar-icon {
+  transform: scale(1.05);
+}
+
+.nav-bar-link:hover {
+  background-color: rgb(250, 250, 250);
+  border-radius: 5rem;
+}
+
+.nav-bar-icon {
+  align-items: center;
+  color: black;
+  display: flex;
+  font-size: 2rem;
+  justify-content: center;
+  object-fit: contain;
+  transition: transform 0.2s;
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+.nav-bar-icon.profile-image {
+  border-radius: 100%;
+  height: 2.2rem;
+  width: 2.2rem;
+}
+
+.nav-bar-link:hover > .nav-bar-icon {
+  transform: scale(1.1);
+}
+
+.nav-link-text {
+  color: black;
+  font-size: 1.5rem;
+  left: 6rem;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.nav-bar-link:active > .nav-bar-icon,
+.nav-bar-link:active > .nav-link-text {
+  color: rgb(168, 168, 168);
+}
+
+.nav-bar-link.create {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.homepage-link-logo {
+  animation: image-fade-in 1s ease-in-out;
+  width: 100%;
+}
+
+.nav-bar-more {
+  cursor: pointer;
+  position: relative;
+  z-index: 3;
+}
+
+/* WHEN SEARCH IS CLICKED */
+
+.nav-bar-link.search {
+  display: flex;
+  justify-content: center;
+  width: 4rem;
+}
+
+.nav-link-text.search {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.homepage-link.search {
+  width: fit-content;
+}

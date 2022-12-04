@@ -1,0 +1,115 @@
+.create-post-form-container {
+  animation: container-fade-in 0.2s;
+  background-color: white;
+  border-radius: 1rem;
+  height: 100%;
+  width: 100%;
+}
+
+.create-post-form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.create-post-form-header {
+  border-bottom: 0.1rem solid rgb(219, 219, 219);
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: 1rem;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.header-button {
+  animation: image-fade-in 0.2s;
+  position: absolute;
+}
+
+.header-button.back {
+  cursor: pointer;
+  font-size: 2rem;
+  left: 1rem;
+  top: 20%;
+}
+
+.header-button.submit {
+  color: #0095f6;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  right: 1rem;
+}
+
+.header-button.submit:active {
+  color: #77a7ff;
+}
+
+.create-post-input-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.create-post-content-button {
+  visibility: hidden;
+}
+
+.create-post-image-input {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  margin-top: 20rem;
+}
+
+.create-post-image-input-container {
+  height: 100%;
+  width: 60%;
+}
+
+.create-post-content-button-label {
+  background-color: rgb(0, 149, 246);
+  border-radius: 0.4rem;
+  color: white;
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 0.8rem;
+  text-align: center;
+}
+
+.create-post-photo-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.create-post-photo {
+  animation: image-fade-in 0.2s;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  height: 100%;
+  left: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.create-post-description-input-container {
+  border-left: 1px solid rgb(219, 219, 219);
+  width: 40%;
+}
+
+.create-post-description-input {
+  border: none;
+  border-bottom-right-radius: 1rem;
+  height: 100%;
+  padding: 1rem;
+  resize: none;
+  width: 100%;
+}

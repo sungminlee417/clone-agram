@@ -1,0 +1,149 @@
+.direct-messaging-page-container {
+  background-color: white;
+  border: 0.1rem solid rgb(219, 219, 219);
+  border-radius: 1rem;
+  display: flex;
+  margin: 2rem auto;
+  width: 65%;
+}
+
+.direct-messaging-page-left {
+  border-right: 0.1rem solid rgb(219, 219, 219);
+  display: flex;
+  flex-direction: column;
+  min-width: 32rem;
+}
+
+.direct-messaging-page-left header {
+  align-items: center;
+  border-bottom: 0.1rem solid rgb(219, 219, 219);
+  display: flex;
+  font-size: 1.4rem;
+  font-weight: bold;
+  height: 6rem;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  width: 100%;
+}
+
+.direct-messaging-page-left-write {
+  cursor: pointer;
+  font-size: 2.2rem;
+  justify-self: flex-end;
+  position: absolute;
+  right: 2rem;
+}
+
+.direct-messaging-messages {
+  flex-grow: 1;
+  overflow-y: scroll;
+  padding-top: 1rem;
+}
+
+.direct-messaging-message-link {
+  align-items: center;
+  background-color: white;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  width: 100%;
+}
+
+.direct-messaging-message-link:hover {
+  background-color: rgb(250, 250, 250);
+}
+
+.direct-messaging-message-link:active {
+  opacity: 0.5;
+}
+
+.direct-messaging-message-link.active {
+  background-color: rgb(239, 239, 239);
+}
+
+.direct-messaging-message-link-user-profile-two {
+  height: 4.8rem;
+  position: relative;
+  width: 4.8rem;
+}
+
+.direct-messaging-message-link-user-profile-two-one {
+  background-color: white;
+  border-radius: 100%;
+  height: 3.6rem;
+  left: 25%;
+  padding: 0.1rem;
+  position: absolute;
+  top: 25%;
+  width: 3.6rem;
+  z-index: 1;
+}
+
+.direct-messaging-message-link-user-profile-two-two {
+  background-color: white;
+  border-radius: 100%;
+  height: 3.5rem;
+  position: absolute;
+  width: 3.5rem;
+}
+
+.direct-messaging-message-link-user-profile-one {
+  align-items: center;
+  display: flex;
+}
+
+.direct-messaging-message-link-user-profile-image {
+  border-radius: 100%;
+  height: 4.8rem;
+  width: 4.8rem;
+}
+
+.direct-messaging-message-user-name-container {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.direct-messaging-message-user-name {
+  color: black;
+  font-size: 1.2rem;
+}
+
+.direct-messaging-page-right {
+  height: 100%;
+  width: 100%;
+}
+
+.direct-messaging-direct-inbox-default {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100%;
+  justify-content: center;
+}
+
+.direct-messaging-direct-inbox-default header {
+  font-size: 2rem;
+  font-weight: lighter;
+}
+
+.direct-messaging-direct-inbox-default div {
+  color: rgb(168, 168, 168);
+  font-size: 1.4rem;
+  font-weight: lighter;
+}
+
+.direct-messaging-direct-inbox-default-button {
+  background-color: rgb(0, 149, 246);
+  border: 0.1rem solid transparent;
+  border-radius: 0.4rem;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.8rem 1.6rem;
+}
+
+.direct-messaging-direct-inbox-default-button:active {
+  opacity: 0.8;
+}

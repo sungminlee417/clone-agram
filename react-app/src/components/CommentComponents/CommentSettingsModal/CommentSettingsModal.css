@@ -1,0 +1,7 @@
+.comment-more-options {
+  align-items: center;
+  color: rgb(150, 150, 150);
+  cursor: pointer;
+  display: flex;
+  visibility: hidden;
+}

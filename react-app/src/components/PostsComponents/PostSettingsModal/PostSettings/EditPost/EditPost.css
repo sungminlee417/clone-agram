@@ -1,0 +1,45 @@
+.edit-post-form {
+  animation: container-fade-in 0.2s;
+  background-color: white;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 20rem;
+  width: 40rem;
+}
+
+.edit-post-form-header {
+  display: flex;
+  font-size: 1.4rem;
+  justify-content: space-between;
+  padding: 1.4rem;
+}
+
+.edit-post-form-cancel {
+  cursor: pointer;
+}
+
+.edit-post-form-divider {
+  background-color: rgb(219, 219, 219);
+  height: 0.1rem;
+  width: 100%;
+}
+
+.edit-post-description-input {
+  border: none;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  height: 100%;
+  padding: 1.4rem;
+  resize: none;
+}
+
+.edit-post-form-submit {
+  color: rgb(0, 149, 246);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.edit-post-form-submit:active {
+  color: #77a7ff;
+}
