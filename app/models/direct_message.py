@@ -18,9 +18,6 @@ class DirectMessage(db.Model):
 class DirectMessageMember(db.Model):
     __tablename__ = 'direct_message_members'
 
-    if environment == "production":
-      __table_args__ = {'schema': SCHEMA}
-
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     user_active = db.Column(db.Boolean, default=False, nullable=False)
