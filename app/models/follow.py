@@ -20,12 +20,9 @@ class Follower(db.Model):
 class Following(db.Model):
   __tablename__ = "followings"
 
-  if environment == "production":
-    __table_args__ = {'schema': SCHEMA}
-
   id = db.Column(db.Integer, primary_key=True)
-  user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")), nullable=False)
-  following_user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")), nullable=False)
+  user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+  following_user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
 
   following_user = db.relationship("User", backref="following_user", foreign_keys=[following_user_id])
 
