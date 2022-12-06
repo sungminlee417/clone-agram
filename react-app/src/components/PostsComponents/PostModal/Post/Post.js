@@ -66,8 +66,8 @@ const Post = ({ post, onClose }) => {
           )}
           <PostModalComments post={post} />
         </div>
-        <PostActions post={post} />
-        <CreateComment post={post} />
+        <PostActions post={post} type="user-profile" />
+        <CreateComment post={post} type="user-profile" />
       </div>
     </section>
   );

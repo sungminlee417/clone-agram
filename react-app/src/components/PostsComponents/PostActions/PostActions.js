@@ -6,10 +6,11 @@ import {
   deletePostLikeThunk,
   loadLikesByPostId,
 } from "../../../store/likes";
+import { loadPostsByUserId } from "../../../store/posts";
 import PostLikesModal from "../PostLikesModal";
 import "./PostActions.css";
 
-const PostActions = ({ post }) => {
+const PostActions = ({ post, type }) => {
   const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.session.user);
   const likes = useSelector((state) => state.likes);
@@ -20,12 +21,18 @@ const PostActions = ({ post }) => {
     return () => dispatch(clearLikes());
   }, [dispatch, post.id]);
 
-  const onLike = () => {
-    dispatch(createPostLikeThunk(post.id));
+  const onLike = async () => {
+    await dispatch(createPostLikeThunk(post.id)).then(() => {
+      if (type === "user-profile") dispatch(loadPostsByUserId(currentUser.id));
+    });
   };
 
-  const onUnlike = () => {
-    dispatch(deletePostLikeThunk(currentUser.id, likes[currentUser.id].id));
+  const onUnlike = async () => {
+    await dispatch(
+      deletePostLikeThunk(currentUser.id, likes[currentUser.id].id)
+    ).then(() => {
+      if (type === "user-profile") dispatch(loadPostsByUserId(currentUser.id));
+    });
   };
 
   return (

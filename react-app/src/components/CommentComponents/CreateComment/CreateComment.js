@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { createCommentThunk } from "../../../store/comments";
-import { loadFollowingPosts } from "../../../store/posts";
+import { loadFollowingPosts, loadPostsByUserId } from "../../../store/posts";
 import "./CreateComment.css";
 
-const CreateComment = ({ post }) => {
+const CreateComment = ({ post, type }) => {
   const dispatch = useDispatch();
+  const currentUser = useSelector((state) => state.session.user);
   const [comment, setComment] = useState("");
   const location = useLocation();
 
@@ -31,6 +32,7 @@ const CreateComment = ({ post }) => {
     await dispatch(createCommentThunk(post.id, payload)).then(() => {
       setComment("");
       if (location.pathname === "/") dispatch(loadFollowingPosts());
+      if (type === "user-profile") dispatch(loadPostsByUserId(currentUser.id));
     });
   };
 
