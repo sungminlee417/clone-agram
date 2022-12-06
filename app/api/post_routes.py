@@ -33,9 +33,9 @@ def posts():
     content.filename = get_unique_filename(content.filename)
     upload = upload_file_to_s3(content)
 
-    # if "url" not in upload:
-    #   return upload, 400
-    # print(upload['url'])
+    if "url" not in upload:
+      return upload, 400
+
     url = upload["url"]
 
     post = Post(

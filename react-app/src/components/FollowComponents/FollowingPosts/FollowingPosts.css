@@ -22,7 +22,9 @@
 }
 
 .following-posts-post-header-profile-image {
+  border-radius: 100%;
   height: 3.2rem;
+  object-fit: cover;
   width: 3.2rem;
 }
 

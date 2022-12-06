@@ -5,6 +5,7 @@ import NavBar from "../NavBar";
 import "./HomePage.css";
 import FollowingPosts from "../FollowComponents/FollowingPosts";
 import DirectMessagingPage from "../DirectMessagingComponents/DirectMessagingPage";
+import ProfileSettings from "../ProfileSettings";
 
 const HomePage = () => {
   return (
@@ -13,6 +14,9 @@ const HomePage = () => {
       <Switch>
         <Route exact path="/">
           <FollowingPosts />
+        </Route>
+        <Route path="/accounts">
+          <ProfileSettings />
         </Route>
         <Route path="/explore">
           <AllPosts />

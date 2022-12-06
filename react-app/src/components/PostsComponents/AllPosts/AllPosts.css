@@ -11,5 +11,4 @@
   gap: 2.4rem;
   grid-template-columns: 1fr 1fr 1fr;
   padding: 12rem;
-  place-items: center;
 }

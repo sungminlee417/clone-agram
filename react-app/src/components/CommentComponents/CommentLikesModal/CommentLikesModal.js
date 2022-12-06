@@ -12,12 +12,14 @@ const CommentLikesModal = ({ comment }) => {
 
   return (
     <>
-      <button
-        className="comment-likes-modal-button"
-        onClick={() => setShowModal(true)}
-      >
-        <div>{Object.values(comment.likes).length} likes</div>
-      </button>
+      {Object.values(comment.likes).length > 0 && (
+        <button
+          className="comment-likes-modal-button"
+          onClick={() => setShowModal(true)}
+        >
+          <div>{Object.values(comment.likes).length} likes</div>
+        </button>
+      )}
       {showModal && (
         <Modal onClose={() => setShowModal(false)} showModal={showModal}>
           <CommentLikes

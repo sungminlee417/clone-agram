@@ -46,13 +46,17 @@ const Post = ({ post, onClose }) => {
         <div className="single-post-description-comments-container">
           {post?.description && (
             <div className="single-post-description">
-              <img
-                className="single-post-description-user-profile"
-                src={post.owner.profileImg}
-                alt="profile pic"
-              />
+              <NavLink to={`/${post.owner.username}`}>
+                <img
+                  className="single-post-description-user-profile"
+                  src={post.owner.profileImg}
+                  alt="profile pic"
+                />
+              </NavLink>
               <div className="single-post-description-text">
-                <strong>{post.owner.username} </strong>
+                <NavLink to={`/${post.owner.username}`}>
+                  <strong>{post.owner.username} </strong>
+                </NavLink>
                 <div>{post.description}</div>
               </div>
             </div>

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 import { loadCommentsByPostId } from "../../../store/comments";
 import { clear } from "../../../store/comments";
 import {
@@ -38,14 +39,22 @@ const PostModalComments = ({ post }) => {
         return (
           <div className="post-modal-comment-container" key={i}>
             <div className="post-modal-comment-content-container">
-              <img
-                className="post-modal-comment-user-profile"
-                src={comment.owner.profileImg}
-                alt="profile pic"
-              />
+              <NavLink to={`/${comment.owner.username}`}>
+                <img
+                  className="post-modal-comment-user-profile"
+                  src={comment.owner.profileImg}
+                  alt="profile pic"
+                />
+              </NavLink>
               <div className="post-modal-comment-content">
                 <div className="post-modal-comment-text">
-                  <strong>{comment.owner.username} </strong>
+                  <NavLink
+                    to={`/${comment.owner.username}`}
+                    className="post-modal-comment-text-link"
+                  >
+                    <strong>{comment.owner.username} </strong>
+                  </NavLink>
+
                   {comment.comment}
                 </div>
                 <div className="post-modal-comment-more-details-container">

@@ -67,6 +67,7 @@
 .search-list-user-photo {
   border-radius: 100%;
   height: 4rem;
+  object-fit: cover;
   width: 4rem;
 }
 

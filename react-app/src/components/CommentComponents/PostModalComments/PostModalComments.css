@@ -3,7 +3,6 @@
   flex-direction: column;
   gap: 0.4rem;
   padding: 1rem 2rem;
-  width: 100%;
 }
 
 .post-modal-comment-container:hover .comment-more-options {
@@ -18,21 +17,30 @@
 }
 
 .post-modal-comment-user-profile {
-  width: 3.2rem;
+  border-radius: 100%;
+  max-height: 3.2rem;
+  min-height: 3.2rem;
+
+  object-fit: cover;
+  max-width: 3.2rem;
+  min-width: 3.2rem;
 }
 
 .post-modal-comment-content {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   gap: 0.4rem;
   justify-content: center;
   margin-top: 0.4rem;
-  width: 100%;
 }
 
 .post-modal-comment-text {
-  width: 86%;
   word-wrap: break-word;
+}
+
+.post-modal-comment-text-link {
+  color: black;
 }
 
 .post-modal-comment-more-details-container {

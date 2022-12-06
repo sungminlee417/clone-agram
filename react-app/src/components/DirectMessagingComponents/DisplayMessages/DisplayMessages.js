@@ -197,59 +197,65 @@ const DisplayMessages = () => {
           <div className="display-messages-container">
             <div className="display-messages-all-messages">
               {Object.values(messages).map((message, i) => {
-                if (message.user.id === currentUser.id) {
-                  return (
-                    <div
-                      className="display-message-container-current-user"
-                      key={i}
-                    >
+                if (message.user) {
+                  if (message.user.id === currentUser.id) {
+                    return (
                       <div
-                        className={`display-message-container-current-user-settings-container display-message-container-current-user-settings-container-${i}`}
+                        className="display-message-container-current-user"
+                        key={i}
                       >
                         <div
-                          onClick={() => onDeleteMessage(message.id)}
-                          className="display-message-container-current-user-unsend"
+                          className={`display-message-container-current-user-settings-container display-message-container-current-user-settings-container-${i}`}
                         >
-                          Unsend
+                          <div
+                            onClick={() => onDeleteMessage(message.id)}
+                            className="display-message-container-current-user-unsend"
+                          >
+                            Unsend
+                          </div>
+                          <div className="display-message-container-current-user-settings-container-tail"></div>
                         </div>
-                        <div className="display-message-container-current-user-settings-container-tail"></div>
+                        <button
+                          onClick={(e) => {
+                            onMessageSettings(e, i);
+                          }}
+                          className={`display-message-current-user-settings-button-container display-message-current-user-settings-button-container-${i}`}
+                        >
+                          <i
+                            className={`fa-solid fa-ellipsis display-message-current-user-settings-button`}
+                          ></i>
+                        </button>
+                        <div className="display-message-current-user">
+                          {message.message}
+                        </div>
                       </div>
-                      <button
-                        onClick={(e) => {
-                          onMessageSettings(e, i);
-                        }}
-                        className={`display-message-current-user-settings-button-container display-message-current-user-settings-button-container-${i}`}
+                    );
+                  } else {
+                    return (
+                      <div
+                        className="display-message-container-other-user"
+                        key={i}
                       >
-                        <i
-                          className={`fa-solid fa-ellipsis display-message-current-user-settings-button`}
-                        ></i>
-                      </button>
-                      <div className="display-message-current-user">
-                        {message.message}
+                        <NavLink to={`/${message.user.id}`}>
+                          <img
+                            src={message.user.profileImg}
+                            alt="user profile"
+                            className={
+                              messages[i].user.id !==
+                              (messages[i + 1] ? messages[i + 1].user.id : null)
+                                ? "display-message-other-user-profile"
+                                : "display-message-other-user-profile-hidden"
+                            }
+                          />
+                        </NavLink>
+                        <div className="display-message-other-user-message">
+                          {message.message}
+                        </div>
                       </div>
-                    </div>
-                  );
+                    );
+                  }
                 } else {
-                  return (
-                    <div
-                      className="display-message-container-other-user"
-                      key={i}
-                    >
-                      <img
-                        src={message.user.profileImg}
-                        alt="user profile"
-                        className={
-                          messages[i].user.id !==
-                          (messages[i + 1] ? messages[i + 1].user.id : null)
-                            ? "display-message-other-user-profile"
-                            : "display-message-other-user-profile-hidden"
-                        }
-                      />
-                      <div className="display-message-other-user-message">
-                        {message.message}
-                      </div>
-                    </div>
-                  );
+                  return null;
                 }
               })}
               <div className="display-message-bottom"></div>

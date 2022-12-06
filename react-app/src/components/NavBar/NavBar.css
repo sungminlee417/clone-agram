@@ -75,6 +75,8 @@
 .nav-bar-icon.profile-image {
   border-radius: 100%;
   height: 2.2rem;
+  object-fit: cover;
+  transition: 0.2s;
   width: 2.2rem;
 }
 
@@ -92,6 +94,10 @@
 .nav-bar-link:active > .nav-bar-icon,
 .nav-bar-link:active > .nav-link-text {
   color: rgb(168, 168, 168);
+}
+
+.nav-bar-link.active > .nav-bar-icon.profile-image {
+  border: 0.1rem solid black;
 }
 
 .nav-bar-link.create {

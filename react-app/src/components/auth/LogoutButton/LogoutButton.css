@@ -10,4 +10,6 @@
 
 .logout-button:hover {
   background-color: rgb(250, 250, 250);
+  border-bottom-left-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
 }

@@ -97,6 +97,42 @@ export const signUp =
     }
   };
 
+export const editUserThunk = (payload) => async (dispatch) => {
+  const response = await fetch("/api/auth/edit", {
+    method: "PUT",
+    body: payload,
+  });
+
+  if (response.ok) {
+    const data = await response.json();
+    dispatch(setUser(data));
+  } else if (response.status < 500) {
+    const data = await response.json();
+    if (data.errors) {
+      return data.errors;
+    }
+  } else {
+    return ["An error occurred. Please try again."];
+  }
+};
+
+export const editUserPasswordThunk = (payload) => async (dispatch) => {
+  const response = await fetch("/api/auth/edit-password", {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+
+  if (response.status < 500) {
+    const data = await response.json();
+    if (data.errors) {
+      return data.errors;
+    }
+  } else {
+    return ["An error occurred. Please try again."];
+  }
+};
+
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case SET_USER:

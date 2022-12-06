@@ -1,0 +1,7 @@
+.change-profile-photo-modal-photo {
+  border-radius: 100%;
+  cursor: pointer;
+  height: 3.4rem;
+  object-fit: cover;
+  width: 3.4rem;
+}

@@ -1,0 +1,43 @@
+.change-profile-photo-container {
+  animation: container-fade-in 0.2s;
+  background-color: white;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.change-profile-photo-header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 3rem;
+}
+
+.change-profile-photo-header-text {
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 0.02rem;
+}
+
+.change-profile-photo-header-text-button {
+  align-items: center;
+  border-top: 0.1rem solid rgb(219, 219, 219);
+  color: rgb(0, 149, 246);
+  display: flex;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  justify-content: center;
+  padding: 1.8rem 16rem;
+}
+
+.change-profile-photo-header-text-button.upload {
+  display: none;
+}
+
+.change-profile-photo-header-text-button.cancel {
+  color: black;
+}
