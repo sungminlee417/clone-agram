@@ -54,7 +54,10 @@ const Post = ({ post, onClose }) => {
                 />
               </NavLink>
               <div className="single-post-description-text">
-                <NavLink to={`/${post.owner.username}`}>
+                <NavLink
+                  to={`/${post.owner.username}`}
+                  className="single-post-description-text-user-link"
+                >
                   <strong>{post.owner.username} </strong>
                 </NavLink>
                 <div>{post.description}</div>
