@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import MyEditor from "../../../MyEditor";
 import { createMessageThunk } from "../../../store/messages";
 import "./CreateMessage.css";
 
@@ -21,6 +22,7 @@ const CreateMessage = ({ directMessageId, socket, currentRoom }) => {
     <div>
       <div className="create-message-input-container">
         <form onSubmit={onSubmit}>
+          <MyEditor />
           <input
             className="create-message-input"
             placeholder="Message..."

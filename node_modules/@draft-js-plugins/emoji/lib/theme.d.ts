@@ -1,0 +1,33 @@
+export interface EmojiPluginTheme {
+    emoji?: string;
+    emojiSuggestions?: string;
+    emojiSuggestionsEntry?: string;
+    emojiSuggestionsEntryFocused?: string;
+    emojiSuggestionsEntryText?: string;
+    emojiSuggestionsEntryIcon?: string;
+    emojiSelect?: string;
+    emojiSelectButton?: string;
+    emojiSelectButtonPressed?: string;
+    emojiSelectPopover?: string;
+    emojiSelectPopoverClosed?: string;
+    emojiSelectPopoverTitle?: string;
+    emojiSelectPopoverGroups?: string;
+    emojiSelectPopoverGroup?: string;
+    emojiSelectPopoverGroupTitle?: string;
+    emojiSelectPopoverGroupList?: string;
+    emojiSelectPopoverGroupItem?: string;
+    emojiSelectPopoverToneSelect?: string;
+    emojiSelectPopoverToneSelectList?: string;
+    emojiSelectPopoverToneSelectItem?: string;
+    emojiSelectPopoverEntry?: string;
+    emojiSelectPopoverEntryFocused?: string;
+    emojiSelectPopoverEntryIcon?: string;
+    emojiSelectPopoverNav?: string;
+    emojiSelectPopoverNavItem?: string;
+    emojiSelectPopoverNavEntry?: string;
+    emojiSelectPopoverNavEntryActive?: string;
+    emojiSelectPopoverScrollbar?: string;
+    emojiSelectPopoverScrollbarOuter?: string;
+    emojiSelectPopoverScrollbarThumb?: string;
+}
+export declare const defaultTheme: EmojiPluginTheme;
