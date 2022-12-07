@@ -6,6 +6,7 @@ import {
 } from "../../../store/sessionUserFollowings";
 import { loadUserByUsernameThunk } from "../../../store/users";
 import "./UnfollowButton.css";
+import UnfollowConfirmationModal from "./UnfollowConfirmationModal";
 
 const UnfollowButton = ({ profileUser, followUser }) => {
   const dispatch = useDispatch();
@@ -20,11 +21,7 @@ const UnfollowButton = ({ profileUser, followUser }) => {
     });
   };
 
-  return (
-    <button className="unfollow-button" onClick={onUnfollow}>
-      Following
-    </button>
-  );
+  return <UnfollowConfirmationModal onUnfollow={onUnfollow} />;
 };
 
 export default UnfollowButton;

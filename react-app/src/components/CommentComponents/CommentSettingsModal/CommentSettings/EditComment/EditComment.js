@@ -9,7 +9,7 @@ const EditComment = ({ comment, onClose }) => {
 
   useEffect(() => {
     const submitButton = document.querySelector(".edit-comment-form-submit");
-    if (commentData) {
+    if (commentData && commentData.trim()) {
       submitButton.removeAttribute("disabled");
       submitButton.classList.add("typed");
     } else {

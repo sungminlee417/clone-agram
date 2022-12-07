@@ -29,6 +29,7 @@ def posts():
     url = None
     content = request.files['content']
     if not allowed_file(content.filename):
+      print('hi bahdy')
       return {"image": "File type is not permitted"}
     content.filename = get_unique_filename(content.filename)
     upload = upload_file_to_s3(content)

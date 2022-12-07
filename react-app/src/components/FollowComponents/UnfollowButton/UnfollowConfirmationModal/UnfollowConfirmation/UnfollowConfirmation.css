@@ -1,0 +1,41 @@
+.unfollow-confirmation-container {
+  animation: container-fade-in 0.2s;
+  background-color: white;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.unfollow-confirmation-header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 2.4rem;
+}
+
+.unfollow-confirmation-header-one {
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 0.02rem;
+}
+
+.unfollow-confirmation-header-two {
+  color: rgb(168, 168, 168);
+  font-size: 1.4rem;
+}
+
+.unfollow-confirmation-button {
+  align-items: center;
+  border-top: 0.1rem solid rgb(219, 219, 219);
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  padding: 1.8rem 16rem;
+}
+
+.unfollow-confirmation-button.delete {
+  color: rgb(237, 73, 86);
+}

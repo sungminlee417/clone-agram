@@ -34,10 +34,25 @@
   resize: none;
 }
 
+.edit-post-form-submit-container {
+  cursor: not-allowed;
+}
+
 .edit-post-form-submit {
   color: rgb(0, 149, 246);
-  cursor: pointer;
   font-weight: bold;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.edit-post-form-submit.enabled {
+  cursor: pointer;
+  pointer-events: all;
+  opacity: 1;
+}
+
+.edit-post-form-submit-container.enabled {
+  cursor: pointer;
 }
 
 .edit-post-form-submit:active {

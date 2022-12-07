@@ -69,8 +69,16 @@ const LandingPage = () => {
       <a
         href="https://github.com/sungminlee417/instagram-clone.git"
         className="landing-page-github"
+        target="_blank"
       >
         <i className="fa-brands fa-github"></i>
+      </a>
+      <a
+        href="https://www.linkedin.com/in/sungmin-lee-288801214/"
+        className="landing-page-linkedin"
+        target="_blank"
+      >
+        <i className="fa-brands fa-linkedin"></i>
       </a>
     </section>
   );

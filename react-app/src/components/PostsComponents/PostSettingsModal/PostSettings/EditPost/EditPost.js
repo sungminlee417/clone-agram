@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { editPostThunk } from "../../../../../store/posts";
 import "./EditPost.css";
@@ -19,6 +19,21 @@ const EditPost = ({ post, onClosePost }) => {
     });
   };
 
+  useEffect(() => {
+    const submitButton = document.querySelector(".edit-post-form-submit");
+    const submitButtonContainer = document.querySelector(
+      ".edit-post-form-submit-container"
+    );
+
+    if (description.trim() || !description) {
+      submitButton.classList.add("enabled");
+      submitButtonContainer.classList.add("enabled");
+    } else {
+      submitButton.classList.remove("enabled");
+      submitButtonContainer.classList.remove("enabled");
+    }
+  }, [description]);
+
   return (
     <form
       className="edit-post-form"
@@ -32,9 +47,11 @@ const EditPost = ({ post, onClosePost }) => {
         <div className="edit-post-description-label">
           <strong>Edit info</strong>
         </div>
-        <button type="submit" className="edit-post-form-submit">
-          Done
-        </button>
+        <div className="edit-post-form-submit-container">
+          <button type="submit" className="edit-post-form-submit">
+            Done
+          </button>
+        </div>
       </header>
       <div className="edit-post-form-divider"></div>
       <textarea

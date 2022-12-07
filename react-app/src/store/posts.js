@@ -55,13 +55,14 @@ export const loadFollowingPosts = () => async (dispatch) => {
   }
 };
 
-export const createPostThunk = (post) => async (dispatch) => {
+export const createPostThunk = (post, validLocation) => async (dispatch) => {
   const response = await fetch("/api/posts/", {
     method: "POST",
     body: post,
   });
 
-  if (response.ok) {
+  if (response.ok && validLocation()) {
+    console.log("hi");
     const data = await response.json();
     dispatch(add(data));
   }

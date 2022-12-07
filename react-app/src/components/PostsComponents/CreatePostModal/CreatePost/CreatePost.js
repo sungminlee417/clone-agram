@@ -1,10 +1,13 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 import { createPostThunk } from "../../../../store/posts";
 import "./CreatePost.css";
 
 const CreatePost = ({ onClose }) => {
   const dispatch = useDispatch();
+  const location = useLocation();
+  const currentUser = useSelector((state) => state.session.user);
   const [content, setContent] = useState("");
   const [description, setDescription] = useState("");
 
@@ -17,6 +20,16 @@ const CreatePost = ({ onClose }) => {
     if (file) setContent(file);
   };
 
+  const validLocation = () => {
+    if (
+      location.pathname === "/" ||
+      location.pathname === "/explore" ||
+      location.pathname === currentUser.username
+    )
+      return true;
+    return false;
+  };
+
   const onSubmit = async (e) => {
     e.preventDefault();
     const postData = new FormData();
@@ -24,8 +37,7 @@ const CreatePost = ({ onClose }) => {
     postData.append("content", content);
     postData.append("description", description);
 
-    await dispatch(createPostThunk(postData)).then(() => {
-      // history.push(`/${match.url}`);
+    await dispatch(createPostThunk(postData, validLocation)).then(() => {
       onClose();
     });
   };
@@ -45,9 +57,11 @@ const CreatePost = ({ onClose }) => {
               >
                 <i className="fa-solid fa-arrow-left-long"></i>
               </button>
-              <button className="header-button submit" type="submit">
-                Share
-              </button>
+              {(description.trim() || !description) && (
+                <button className="header-button submit" type="submit">
+                  Share
+                </button>
+              )}
             </>
           )}
           <div>Create new post</div>
@@ -71,6 +85,7 @@ const CreatePost = ({ onClose }) => {
                   id="content-file"
                   onChange={updateFile}
                   type="file"
+                  accept="image/pdf, image/png, image/jpg, image/jpeg, image/gif"
                   className="create-post-content-button"
                 ></input>
               </div>

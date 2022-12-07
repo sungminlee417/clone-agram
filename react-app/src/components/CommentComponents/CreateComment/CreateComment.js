@@ -13,7 +13,7 @@ const CreateComment = ({ post, type }) => {
 
   useEffect(() => {
     const submitButton = document.querySelector(".create-comment-submit");
-    if (comment) {
+    if (comment && comment.trim()) {
       submitButton.removeAttribute("disabled");
       submitButton.classList.add("typed");
     } else {

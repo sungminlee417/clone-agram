@@ -58,9 +58,21 @@
 }
 
 .landing-page-github {
+  align-items: center;
   bottom: 1rem;
   color: black;
+  display: flex;
   font-size: 3rem;
   left: 1rem;
+  position: absolute;
+}
+
+.landing-page-linkedin {
+  align-items: center;
+  bottom: 1rem;
+  color: black;
+  display: flex;
+  font-size: 3rem;
+  left: 5rem;
   position: absolute;
 }
