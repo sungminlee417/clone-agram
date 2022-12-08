@@ -24,7 +24,7 @@ const CreatePost = ({ onClose }) => {
     if (
       location.pathname === "/" ||
       location.pathname === "/explore" ||
-      location.pathname === currentUser.username
+      location.pathname === `/${currentUser.username}`
     )
       return true;
     return false;
