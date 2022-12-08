@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { createPostThunk } from "../../../../store/posts";
@@ -10,6 +10,7 @@ const CreatePost = ({ onClose }) => {
   const currentUser = useSelector((state) => state.session.user);
   const [content, setContent] = useState("");
   const [description, setDescription] = useState("");
+  const [multipleButtonClicked, setMultipleButtonClicked] = useState(false);
 
   const updateDescription = (e) => {
     setDescription(e.target.value);
@@ -41,6 +42,26 @@ const CreatePost = ({ onClose }) => {
       onClose();
     });
   };
+
+  const toggleMultipleMenu = (e) => {
+    e.preventDefault();
+    if (multipleButtonClicked) {
+      setMultipleButtonClicked(false);
+    } else {
+      setMultipleButtonClicked(true);
+    }
+  };
+
+  useEffect(() => {
+    const createPostForm = document.querySelector(
+      ".create-post-form-container"
+    );
+    const closeMultipleMenu = () => setMultipleButtonClicked(false);
+
+    if (multipleButtonClicked)
+      createPostForm.addEventListener("click", closeMultipleMenu);
+    else createPostForm.removeEventListener("click", closeMultipleMenu);
+  }, [multipleButtonClicked]);
 
   return (
     <section
@@ -96,6 +117,17 @@ const CreatePost = ({ onClose }) => {
                   src={URL.createObjectURL(content)}
                   alt="post pic"
                 />
+                <div className="create-post-photo-multiple-photos-button-container">
+                  <button
+                    className="create-post-photo-multiple-button"
+                    onClick={toggleMultipleMenu}
+                  >
+                    <i class="fa-regular fa-clone create-post-photo-multiple-button-icon"></i>
+                  </button>
+                  {multipleButtonClicked && (
+                    <div className="create-post-photo-multiple-menu">Hi!</div>
+                  )}
+                </div>
               </div>
             )}
           </div>
