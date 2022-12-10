@@ -90,7 +90,6 @@
 .create-post-photo {
   animation: image-fade-in 0.2s;
   border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
   height: 100%;
   left: 50%;
   object-fit: cover;
