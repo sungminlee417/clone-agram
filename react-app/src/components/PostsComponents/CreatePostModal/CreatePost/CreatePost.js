@@ -8,9 +8,11 @@ const CreatePost = ({ onClose }) => {
   const dispatch = useDispatch();
   const location = useLocation();
   const currentUser = useSelector((state) => state.session.user);
-  const [content, setContent] = useState("");
+  const [content, setContent] = useState([]);
+  const [currentImage, setCurrentImage] = useState(0);
   const [description, setDescription] = useState("");
   const [multipleButtonClicked, setMultipleButtonClicked] = useState(false);
+  const [prevImage, setPrevImage] = useState(1);
 
   const updateDescription = (e) => {
     setDescription(e.target.value);
@@ -18,7 +20,10 @@ const CreatePost = ({ onClose }) => {
 
   const updateFile = (e) => {
     const file = e.target.files[0];
-    if (file) setContent(file);
+    if (file)
+      setContent((prevContent) => {
+        return [...prevContent, file];
+      });
   };
 
   const validLocation = () => {
@@ -45,23 +50,60 @@ const CreatePost = ({ onClose }) => {
 
   const toggleMultipleMenu = (e) => {
     e.preventDefault();
+    e.stopPropagation();
+
+    const multipleButton = document.querySelector(
+      ".create-post-photo-multiple-button"
+    );
+
     if (multipleButtonClicked) {
       setMultipleButtonClicked(false);
+      multipleButton.classList.remove("clicked");
     } else {
       setMultipleButtonClicked(true);
+      multipleButton.classList.add("clicked");
+    }
+  };
+
+  const updateCurrentImage = (key) => {
+    setPrevImage(currentImage);
+    setCurrentImage(key);
+  };
+
+  const removeImage = (e, index) => {
+    e.preventDefault();
+    setContent((prevContent) => {
+      const prevContentCopy = [...prevContent];
+      prevContentCopy.splice(index, 1);
+      return prevContentCopy;
+    });
+    if (index && currentImage) {
+      setCurrentImage(index - 1);
+      setPrevImage(currentImage);
     }
   };
 
   useEffect(() => {
-    const createPostForm = document.querySelector(
-      ".create-post-form-container"
+    const image = document.querySelector(
+      `.create-post-photo-preview-image-${currentImage}`
     );
-    const closeMultipleMenu = () => setMultipleButtonClicked(false);
+    const previousImage = document.querySelector(
+      `.create-post-photo-preview-image-${prevImage}`
+    );
 
-    if (multipleButtonClicked)
-      createPostForm.addEventListener("click", closeMultipleMenu);
-    else createPostForm.removeEventListener("click", closeMultipleMenu);
-  }, [multipleButtonClicked]);
+    if (image) {
+      image.classList.add("selected");
+    }
+    if (prevImage !== currentImage && previousImage) {
+      previousImage.classList.remove("selected");
+    }
+  }, [currentImage, prevImage]);
+
+  useEffect(() => {
+    if (!content.length) {
+      setMultipleButtonClicked(false);
+    }
+  }, [content, multipleButtonClicked]);
 
   return (
     <section
@@ -70,11 +112,11 @@ const CreatePost = ({ onClose }) => {
     >
       <form className="create-post-form" onSubmit={onSubmit}>
         <header className="create-post-form-header">
-          {content && (
+          {content.length > 0 && (
             <>
               <button
                 className="header-button back"
-                onClick={() => setContent("")}
+                onClick={() => setContent([])}
               >
                 <i className="fa-solid fa-arrow-left-long"></i>
               </button>
@@ -89,7 +131,7 @@ const CreatePost = ({ onClose }) => {
         </header>
         <div className="create-post-input-container">
           <div className="create-post-image-input-container">
-            {!content ? (
+            {!content.length ? (
               <div className="create-post-image-input">
                 <img
                   className="create-post-image-input-photo"
@@ -114,20 +156,59 @@ const CreatePost = ({ onClose }) => {
               <div className="create-post-photo-container">
                 <img
                   className="create-post-photo"
-                  src={URL.createObjectURL(content)}
+                  src={URL.createObjectURL(content[currentImage])}
                   alt="post pic"
                 />
-                <div className="create-post-photo-multiple-photos-button-container">
-                  <button
-                    className="create-post-photo-multiple-button"
-                    onClick={toggleMultipleMenu}
-                  >
-                    <i class="fa-regular fa-clone create-post-photo-multiple-button-icon"></i>
-                  </button>
-                  {multipleButtonClicked && (
-                    <div className="create-post-photo-multiple-menu">Hi!</div>
-                  )}
-                </div>
+                <button
+                  className="create-post-photo-multiple-button"
+                  onClick={toggleMultipleMenu}
+                >
+                  <i className="fa-regular fa-clone create-post-photo-multiple-button-icon"></i>
+                </button>
+                {multipleButtonClicked && (
+                  <div className="create-post-photo-multiple-menu-container">
+                    <div className="create-post-photo-preview-image-container">
+                      {Object.values(content).map((image, i) => {
+                        return (
+                          <div
+                            key={i}
+                            className="create-post-photo-preview-image-remove-container"
+                          >
+                            <img
+                              src={URL.createObjectURL(image)}
+                              className={`create-post-photo-preview-image create-post-photo-preview-image-${i} ${
+                                currentImage === 0 && i === 0
+                                  ? "selected"
+                                  : null
+                              }`}
+                              onClick={() => updateCurrentImage(i)}
+                              alt="preview"
+                            />
+                            <button
+                              className="create-post-photo-preview-image-remove"
+                              onClick={(e) => removeImage(e, i)}
+                            >
+                              <i className="fa-solid fa-xmark"></i>
+                            </button>
+                          </div>
+                        );
+                      })}
+                    </div>
+                    <label
+                      htmlFor="add-photo"
+                      className="create-post-photo-add-photo-input-icon"
+                    >
+                      <i className="fa-solid fa-plus"></i>
+                    </label>
+                    <input
+                      id="add-photo"
+                      className="create-post-photo-add-photo-input"
+                      onChange={updateFile}
+                      type="file"
+                      accept="image/pdf, image/png, image/jpg, image/jpeg, image/gif"
+                    />
+                  </div>
+                )}
               </div>
             )}
           </div>

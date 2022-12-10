@@ -62,7 +62,6 @@ export const createPostThunk = (post, validLocation) => async (dispatch) => {
   });
 
   if (response.ok && validLocation()) {
-    console.log("hi");
     const data = await response.json();
     dispatch(add(data));
   }
