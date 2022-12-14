@@ -7,7 +7,7 @@ class Image(db.Model):
   image_url = db.Column(db.String(255), nullable=False)
   post_id = db.Column(db.Integer, db.ForeignKey("posts.id"), nullable=False)
 
-  post = db.relationship('Post', back_populates='images', cascade="all, delete-orphan")
+  post = db.relationship('Post', back_populates='images')
 
 
 

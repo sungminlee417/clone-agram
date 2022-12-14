@@ -40,7 +40,10 @@ const CreatePost = ({ onClose }) => {
     e.preventDefault();
     const postData = new FormData();
 
-    postData.append("content", content);
+    for (let i = 0; i < content.length; i++) {
+      const contentItem = content[i];
+      postData.append("content", contentItem);
+    }
     postData.append("description", description);
 
     await dispatch(createPostThunk(postData, validLocation)).then(() => {
