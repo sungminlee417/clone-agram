@@ -2,8 +2,6 @@
 
 <!-- ABOUT THE PROJECT -->
 
-a
-
 ## About The Project
 
 This application is an Instagram clone featuring both backend and frontend technologies using the PERN stack.
