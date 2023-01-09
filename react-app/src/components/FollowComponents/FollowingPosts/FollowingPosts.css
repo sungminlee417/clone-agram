@@ -49,11 +49,51 @@
 }
 
 .following-posts-post-content-container {
+  align-items: center;
   background-color: black;
+  display: flex;
   width: 40rem;
 }
 
+.following-posts-post-content-container-swiper {
+  height: 100%;
+  width: 100%;
+}
+
+.following-posts-post-swiper-container {
+  align-items: center;
+  display: flex;
+}
+
+.following-posts-post-swiper-left,
+.following-posts-post-swiper-right {
+  align-items: center;
+  background-color: white;
+  border-radius: 100%;
+  color: black;
+  cursor: pointer;
+  display: flex;
+  font-size: 1.2rem;
+  justify-content: center;
+  opacity: 0.7;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.4rem;
+  height: 2.4rem;
+  z-index: 1;
+}
+
+.following-posts-post-swiper-left {
+  left: 1rem;
+}
+
+.following-posts-post-swiper-right {
+  right: 1rem;
+}
+
 .following-posts-post-content {
+  height: 100%;
   object-fit: contain;
   width: 100%;
 }

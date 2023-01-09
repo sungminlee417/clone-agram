@@ -1,6 +1,6 @@
 from flask import Blueprint, request
 from flask_login import login_required, current_user
-from app.models import db, Post
+from app.models import db, Post, Image
 from ..forms.post_form import PostForm
 from .comment_routes import comment_post_routes
 from .like_routes import like_post_routes
@@ -25,7 +25,9 @@ def posts():
   posts = Post.query.all()
   form = PostForm()
   form['csrf_token'].data = request.cookies['csrf_token']
+
   if form.validate_on_submit():
+<<<<<<< HEAD
     url = None
     content = request.files['content']
     if not allowed_file(content.filename):
@@ -38,13 +40,31 @@ def posts():
 
     url = upload["url"]
 
+=======
+>>>>>>> multiple-photos
     post = Post(
-            content_url=url,
             description=form.data["description"],
             user_id=current_user.id
             )
     db.session.add(post)
     db.session.commit()
+
+    for content in request.files.getlist('content'):
+      url = None
+      if not allowed_file(content.filename):
+        return {"image": "File type is not permitted"}
+      content.filename = get_unique_filename(content.filename)
+      upload = upload_file_to_s3(content)
+
+      if "url" not in upload:
+        return upload, 400
+
+      url = upload["url"]
+
+      image = Image(image_url=url, post_id=post.id)
+      db.session.add(image)
+      db.session.commit()
+
     return post.to_dict()
   return {post.id: post.to_dict() for post in posts}
 

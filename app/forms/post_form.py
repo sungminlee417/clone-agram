@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import FileField, StringField
+from wtforms import StringField, MultipleFileField
 
 class PostForm(FlaskForm):
-  content = FileField('Post Image')
+  content = MultipleFileField('Post Images')
   description = StringField("Description")

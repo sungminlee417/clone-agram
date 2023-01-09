@@ -6,11 +6,6 @@ import "./UnfollowConfirmationModal.css";
 const UnfollowConfirmationModal = ({ onUnfollow }) => {
   const [showModal, setShowModal] = useState(false);
 
-  const onClick = (e) => {
-    e.stopPropagation();
-    setShowModal(true);
-  };
-
   return (
     <>
       <button
