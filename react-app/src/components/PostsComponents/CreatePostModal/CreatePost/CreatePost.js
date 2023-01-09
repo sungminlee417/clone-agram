@@ -180,9 +180,7 @@ const CreatePost = ({ onClose }) => {
                             <img
                               src={URL.createObjectURL(image)}
                               className={`create-post-photo-preview-image create-post-photo-preview-image-${i} ${
-                                currentImage === 0 && i === 0
-                                  ? "selected"
-                                  : null
+                                currentImage === i ? "selected" : null
                               }`}
                               onClick={() => updateCurrentImage(i)}
                               alt="preview"

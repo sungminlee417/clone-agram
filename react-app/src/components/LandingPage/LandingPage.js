@@ -70,6 +70,7 @@ const LandingPage = () => {
         href="https://github.com/sungminlee417/instagram-clone.git"
         className="landing-page-github"
         target="_blank"
+        rel="noreferrer"
       >
         <i className="fa-brands fa-github"></i>
       </a>
@@ -77,6 +78,7 @@ const LandingPage = () => {
         href="https://www.linkedin.com/in/sungmin-lee-288801214/"
         className="landing-page-linkedin"
         target="_blank"
+        rel="noreferrer"
       >
         <i className="fa-brands fa-linkedin"></i>
       </a>

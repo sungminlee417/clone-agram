@@ -140,7 +140,7 @@
 
 .create-post-photo-preview-image-container {
   display: flex;
-  flex-wrap: wrap;
+  overflow-x: scroll;
   gap: 1rem;
 }
 

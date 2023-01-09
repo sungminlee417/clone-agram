@@ -5,15 +5,30 @@
   width: 26rem;
 }
 
+.post-content-container {
+  cursor: pointer;
+  height: 100%;
+  position: relative;
+  transition: 0.2s;
+  width: 100%;
+}
+
+.post-content-container:hover {
+  opacity: 0.7;
+}
+
 .post-content {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  transition: 0.2s;
 }
 
-.post-content:hover {
-  opacity: 0.7;
+.post-multiple-icon {
+  color: white;
+  font-size: 1.8rem;
+  position: absolute;
+  top: 5%;
+  right: 5%;
 }
 
 .post-comment-like-count {
