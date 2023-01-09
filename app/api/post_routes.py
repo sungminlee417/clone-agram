@@ -27,21 +27,6 @@ def posts():
   form['csrf_token'].data = request.cookies['csrf_token']
 
   if form.validate_on_submit():
-<<<<<<< HEAD
-    url = None
-    content = request.files['content']
-    if not allowed_file(content.filename):
-      return {"image": "File type is not permitted"}
-    content.filename = get_unique_filename(content.filename)
-    upload = upload_file_to_s3(content)
-
-    if "url" not in upload:
-      return upload, 400
-
-    url = upload["url"]
-
-=======
->>>>>>> multiple-photos
     post = Post(
             description=form.data["description"],
             user_id=current_user.id
