@@ -1,3 +1,15 @@
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+import { useRef } from "react";
+
+// Import Swiper styles
+import "swiper/swiper.min.css";
+import "swiper/modules/pagination/pagination.min.css";
+import "swiper/modules/navigation/navigation.min.css";
+
+// import required modules
+import { Navigation, Pagination } from "swiper";
+
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import CreateComment from "../../../CommentComponents/CreateComment";
@@ -8,19 +20,59 @@ import "./Post.css";
 
 const Post = ({ post, onClose }) => {
   const currentUser = useSelector((state) => state.session.user);
+  const prevSlide = useRef(null);
+  const nextSlide = useRef(null);
 
   return (
     <section
       className="single-post-container"
       onClick={(e) => e.stopPropagation()}
     >
-      <div className="single-post-content-container">
-        <img
-          className="single-post-content"
-          src={post.contentUrl}
-          alt="content pic"
-        />
-      </div>
+      <Swiper
+        cssMode={true}
+        navigation={{
+          prevEl: prevSlide.current,
+          nextEl: nextSlide.current,
+        }}
+        pagination={true}
+        modules={[Navigation, Pagination]}
+        className="single-post-content-swiper"
+        style={{
+          "--swiper-pagination-color": "white",
+          "--swiper-pagination-bullet-inactive-color": "#999999",
+          "--swiper-pagination-bullet-inactive-opacity": "1",
+          "--swiper-pagination-bullet-size": ".6rem",
+          "--swiper-pagination-bullet-horizontal-gap": ".2rem",
+        }}
+        onInit={(swiper) => {
+          swiper.params.navigation.prevEl = prevSlide.current;
+          swiper.params.navigation.nextEl = nextSlide.current;
+          swiper.navigation.init();
+          swiper.navigation.update();
+        }}
+      >
+        {Object.values(post.images).map((image, i) => {
+          return (
+            <SwiperSlide className="single-post-content-container" key={i}>
+              <img
+                className="single-post-content"
+                src={image.imageUrl}
+                alt="follow content"
+              />
+            </SwiperSlide>
+          );
+        })}
+        {Object.values(post.images).length > 1 && (
+          <>
+            <div className="single-post-swiper-left" ref={prevSlide}>
+              <i className="fa-solid fa-chevron-left"></i>
+            </div>
+            <div className="single-post-swiper-right" ref={nextSlide}>
+              <i className="fa-solid fa-chevron-right"></i>
+            </div>
+          </>
+        )}
+      </Swiper>
       <div className="single-post-description-container">
         <div className="single-post-description-header">
           <NavLink

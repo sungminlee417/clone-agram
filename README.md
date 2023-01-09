@@ -13,6 +13,10 @@ This application is an Instagram clone featuring both backend and frontend techn
 
 Users can view all posts created by all users. Users can also upload posts that they can share with the world. Users have the ability to edit and delete their own posts as well.
 
+### Swiper
+
+Swiper package was used for posts with multiple images. This allows for users to be able to scroll through multiple images easily with the click of a button. Swiper is used on this application to display only one image at a time, allowing for a cleaner design.
+
 ### Interact
 
 Users have the ability to view, comment on, and/or like other user's posts. Users can also subscribe/follow other user's to see those user's posts on their homepage.

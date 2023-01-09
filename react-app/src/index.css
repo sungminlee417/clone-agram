@@ -105,3 +105,11 @@ textarea:focus {
     opacity: 1;
   }
 }
+
+/********************************/
+/*********SWIPER STYLING*************/
+/********************************/
+
+.swiper-wrapper {
+  align-items: center; /* add this will all relevant prefixes */
+}
