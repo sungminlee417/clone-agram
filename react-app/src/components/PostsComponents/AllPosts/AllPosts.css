@@ -12,6 +12,7 @@
   gap: 2.4rem;
   grid-template-columns: 1fr 1fr 1fr;
   padding: 12rem;
+  height: fit-content;
 }
 
 @media (max-width: 767px) {
