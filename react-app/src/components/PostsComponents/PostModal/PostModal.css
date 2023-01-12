@@ -61,3 +61,24 @@
   padding-left: 1.6rem;
   padding-bottom: 1rem;
 }
+
+@media (max-width: 1263px) {
+  .post-container {
+    height: 20rem;
+    width: 20rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .post-container {
+    height: 16rem;
+    width: 16rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .post-container {
+    height: 13rem;
+    width: 13rem;
+  }
+}

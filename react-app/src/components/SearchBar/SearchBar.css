@@ -90,3 +90,22 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
+/* MEDIA QUERIES */
+
+@media (max-width: 767px) {
+  .search-bar-container {
+    animation: container-slide-in-down 0.2s;
+    border-radius: 1rem;
+    height: 30rem;
+    top: 8rem;
+  }
+
+  .search-bar-header {
+    padding: 1rem;
+  }
+
+  .search-bar-input {
+    margin: 1.4rem;
+  }
+}

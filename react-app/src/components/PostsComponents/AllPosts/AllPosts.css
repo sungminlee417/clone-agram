@@ -3,6 +3,7 @@
   flex-grow: 1;
   justify-content: center;
   overflow-y: scroll;
+  overflow-x: hidden;
   width: 100%;
 }
 
@@ -11,4 +12,18 @@
   gap: 2.4rem;
   grid-template-columns: 1fr 1fr 1fr;
   padding: 12rem;
+}
+
+@media (max-width: 767px) {
+  .all-posts-container {
+    gap: 0.6rem;
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .all-posts-container {
+    gap: 0.4rem;
+    padding: 2rem;
+  }
 }

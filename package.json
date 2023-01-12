@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "react-responsive": "^9.0.2",
     "swiper": "^8.4.5"
   }
 }

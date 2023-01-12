@@ -3,3 +3,10 @@
   height: 100%;
   overflow-y: hidden;
 }
+
+/* MEDIA QUERIES */
+@media (max-width: 767px) {
+  .home-page {
+    flex-direction: column;
+  }
+}

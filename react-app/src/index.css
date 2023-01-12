@@ -106,6 +106,18 @@ textarea:focus {
   }
 }
 
+@keyframes container-slide-in-down {
+  from {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
 /********************************/
 /*********SWIPER STYLING*************/
 /********************************/

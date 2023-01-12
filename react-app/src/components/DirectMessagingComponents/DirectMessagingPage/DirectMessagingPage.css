@@ -151,3 +151,18 @@
 .direct-messaging-direct-inbox-default-button:active {
   opacity: 0.8;
 }
+
+@media (max-width: 767px) {
+  .direct-messaging-page-container {
+    flex-grow: 1;
+    width: 90%;
+  }
+
+  .direct-messaging-page-left {
+    min-width: 22rem;
+  }
+
+  .direct-messaging-direct-inbox-default {
+    text-align: center;
+  }
+}

@@ -12,6 +12,9 @@ const NavBar = () => {
   const user = useSelector((state) => state.session.user);
   const location = useLocation();
 
+  const hello = window.matchMedia("(min-width: 1263px)");
+  console.log(hello);
+
   const closeSearch = () => {
     setSearchBar(false);
     const navBarLinks = document.getElementsByClassName("nav-bar-link");
@@ -25,9 +28,9 @@ const NavBar = () => {
       navBarLinks[i].classList.remove("search");
     }
 
-    const homePageLink = document.querySelector(".homepage-link");
+    // const homePageLink = document.querySelector(".homepage-link");
     const navBar = document.querySelector(".nav-bar");
-    homePageLink.classList.remove("search");
+    // homePageLink.classList.remove("search");
     navBar.classList.remove("search");
   };
 
@@ -43,9 +46,9 @@ const NavBar = () => {
     for (let i = 0; i < navBarLinks.length; i++) {
       navBarLinks[i].classList.add("search");
     }
-    const homePageLink = document.querySelector(".homepage-link");
+    // const homePageLink = document.querySelector(".homepage-link");
     const navBar = document.querySelector(".nav-bar");
-    homePageLink.classList.add("search");
+    // homePageLink.classList.add("search");
     navBar.classList.add("search");
   };
 
@@ -99,24 +102,28 @@ const NavBar = () => {
     <section className="nav-bar-section">
       <nav className="nav-bar">
         <div className="nav-links-container">
-          <NavLink
+          {/* <NavLink
             className="homepage-link"
             to="/"
             exact={true}
             activeClassName="active"
           >
-            {!searchBar ? (
-              <img
-                className="homepage-link-logo"
-                src="https://cloneagram.s3.us-west-1.amazonaws.com/landing-page-logo.png"
-                alt="logo"
-              />
-            ) : (
-              <div className="nav-bar-link">
-                <i className="fa-brands fa-instagram nav-bar-icon"></i>
-              </div>
-            )}
-          </NavLink>
+            <div
+              className="homepage-link-logo"
+              style={
+                !searchBar
+                  ? {
+                      backgroundImage: `url("https://cloneagram.s3.us-west-1.amazonaws.com/landing-page-logo.png")`,
+                    }
+                  : {
+                      backgroundImage: `url("https://cloneagram.s3.us-west-1.amazonaws.com/5ecec78673e4440004f09e77.png")`,
+                      backgroundPosition: "50%",
+                      backgroundSize: "2.4rem",
+                      width: "4rem",
+                    }
+              }
+            />
+          </NavLink> */}
           <NavLink
             className="nav-bar-link"
             to="/"

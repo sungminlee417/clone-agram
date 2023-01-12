@@ -70,15 +70,15 @@ const FollowingPost = ({ post, key }) => {
   };
 
   return (
-    <div className="following-posts-post-container">
-      <header className="following-posts-post-header">
+    <div className="following-post-container">
+      <header className="following-post-header">
         <NavLink
           to={`/${post.owner.username}`}
-          className="following-posts-post-user-link"
+          className="following-post-user-link"
         >
-          <div className="following-posts-post-header-user-info">
+          <div className="following-post-header-user-info">
             <img
-              className="following-posts-post-header-profile-image"
+              className="following-post-header-profile-image"
               src={post.owner.profileImg}
               alt="follow profile"
             />
@@ -87,7 +87,7 @@ const FollowingPost = ({ post, key }) => {
         </NavLink>
         {post.owner.id === currentUser.id && <PostSettingsModal post={post} />}
       </header>
-      <div className="following-posts-post-content-container">
+      <div className="following-post-content-container">
         <Swiper
           cssMode={true}
           navigation={{
@@ -96,7 +96,7 @@ const FollowingPost = ({ post, key }) => {
           }}
           pagination={true}
           modules={[Navigation, Pagination]}
-          className="following-posts-post-content-container-swiper"
+          className="following-post-content-container-swiper"
           style={{
             "--swiper-pagination-color": "white",
             "--swiper-pagination-bullet-inactive-color": "#999999",
@@ -113,12 +113,9 @@ const FollowingPost = ({ post, key }) => {
         >
           {Object.values(post.images).map((image, i) => {
             return (
-              <SwiperSlide
-                className="following-posts-post-swiper-container"
-                key={i}
-              >
+              <SwiperSlide className="following-post-swiper-container" key={i}>
                 <img
-                  className="following-posts-post-content"
+                  className="following-post-content"
                   src={image.imageUrl}
                   alt="follow content"
                 />
@@ -127,45 +124,42 @@ const FollowingPost = ({ post, key }) => {
           })}
           {Object.values(post.images).length > 1 && (
             <>
-              <div className="following-posts-post-swiper-left" ref={prevSlide}>
+              <div className="following-post-swiper-left" ref={prevSlide}>
                 <i className="fa-solid fa-chevron-left"></i>
               </div>
-              <div
-                className="following-posts-post-swiper-right"
-                ref={nextSlide}
-              >
+              <div className="following-post-swiper-right" ref={nextSlide}>
                 <i className="fa-solid fa-chevron-right"></i>
               </div>
             </>
           )}
         </Swiper>
       </div>
-      <section className="following-posts-post-actions-container">
-        <div className="following-posts-post-actions">
+      <section className="following-post-actions-container">
+        <div className="following-post-actions">
           {!post.likes[currentUser.id] ? (
             <button
-              className="following-posts-post-actions-like-button"
+              className="following-post-actions-like-button"
               onClick={() => onLike(post.id)}
             >
-              <i className="fa-regular fa-heart following-posts-post-actions-button"></i>
+              <i className="fa-regular fa-heart following-post-actions-button"></i>
             </button>
           ) : (
             <button
-              className="following-posts-post-actions-unlike-button"
+              className="following-post-actions-unlike-button"
               onClick={() => onUnlike(post)}
             >
-              <i className="fa-solid fa-heart following-posts-post-actions-button"></i>
+              <i className="fa-solid fa-heart following-post-actions-button"></i>
             </button>
           )}
-          <PostModal post={post} type="following-posts-comment" />
+          <PostModal post={post} type="following-post-comment" />
         </div>
         <PostLikesModal likes={post.likes} />
       </section>
       {post.description && (
-        <div className="following-posts-post-description">
+        <div className="following-post-description">
           <strong>
             <NavLink
-              className="following-posts-post-user-link"
+              className="following-post-user-link"
               to={`/${post.owner.username}`}
             >
               {post.owner.username}
@@ -176,18 +170,18 @@ const FollowingPost = ({ post, key }) => {
       )}
       <PostModal post={post} type="following-posts" />
       <form
-        className="following-posts-create-comment-form"
+        className="following-post-create-comment-form"
         onSubmit={(e) => onSubmit(e, post)}
       >
         <input
-          id="following-posts-create-comment-input"
-          className="following-posts-create-comment-input"
+          id="following-post-create-comment-input"
+          className="following-post-create-comment-input"
           placeholder="Add a comment..."
           value={comment}
           onChange={updateComment}
         />
         <button
-          className={`following-posts-create-comment-submit following-posts-create-comment-submit-${post.id}`}
+          className={`following-post-create-comment-submit following-post-create-comment-submit-${post.id}`}
           disabled
           type="submit"
         >
