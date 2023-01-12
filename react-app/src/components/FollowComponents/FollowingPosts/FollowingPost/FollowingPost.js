@@ -31,7 +31,7 @@ const FollowingPost = ({ post, key }) => {
 
   useEffect(() => {
     const submitButton = document.querySelector(
-      `.following-posts-create-comment-submit-${post.id}`
+      `.following-post-create-comment-submit-${post.id}`
     );
     if (comment && submitButton) {
       submitButton.removeAttribute("disabled");

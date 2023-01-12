@@ -21,7 +21,7 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 530px) {
   .all-posts-container {
     gap: 0.4rem;
     padding: 2rem;

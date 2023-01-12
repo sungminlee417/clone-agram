@@ -12,9 +12,6 @@ const NavBar = () => {
   const user = useSelector((state) => state.session.user);
   const location = useLocation();
 
-  const hello = window.matchMedia("(min-width: 1263px)");
-  console.log(hello);
-
   const closeSearch = () => {
     setSearchBar(false);
     const navBarLinks = document.getElementsByClassName("nav-bar-link");

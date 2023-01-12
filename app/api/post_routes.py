@@ -25,7 +25,6 @@ def posts():
   posts = Post.query.all()
   form = PostForm()
   form['csrf_token'].data = request.cookies['csrf_token']
-
   if form.validate_on_submit():
     post = Post(
             description=form.data["description"],
@@ -33,7 +32,7 @@ def posts():
             )
     db.session.add(post)
     db.session.commit()
-
+    print(request.files.getlist('content'))
     for content in request.files.getlist('content'):
       url = None
       if not allowed_file(content.filename):

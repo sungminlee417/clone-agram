@@ -1,6 +1,5 @@
 .user-settings-section {
   margin: 3.2rem 0;
-  width: 64rem;
 }
 
 .user-settings-header {
@@ -80,4 +79,16 @@
   cursor: pointer;
   opacity: 1;
   pointer-events: all;
+}
+
+@media (max-width: 767px) {
+  .user-settings-input-label {
+    font-size: 1rem;
+    width: 20%;
+    padding-right: 1rem;
+  }
+
+  .user-settings-input {
+    width: 75%;
+  }
 }

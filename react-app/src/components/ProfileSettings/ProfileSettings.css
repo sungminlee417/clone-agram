@@ -3,6 +3,7 @@
   flex-grow: 1;
   justify-content: center;
   overflow-y: scroll;
+  width: 100%;
 }
 
 .profile-settings-container {
@@ -10,4 +11,5 @@
   border: 0.1rem solid rgb(219, 219, 219);
   display: flex;
   margin: 6rem 0;
+  width: 95%;
 }
