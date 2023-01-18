@@ -91,7 +91,7 @@ const CreateDirectMessaging = ({ onClose }) => {
     >
       <header>
         <button className="create-direct-messaging-cancel" onClick={onClose}>
-          <i className="fa-solid fa-x"></i>
+          <i className="fa-solid fa-xmark"></i>
         </button>
         <div>New Message</div>
         <button

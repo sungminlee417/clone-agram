@@ -17,7 +17,7 @@ const PostLikes = ({ likes, onClose }) => {
       <header className="user-list-header">
         <div>Likes</div>
         <button className="user-list-escape" onClick={onClose}>
-          <i className="fa-solid fa-x"></i>
+          <i className="fa-solid fa-xmark"></i>
         </button>
       </header>
       <div className="user-list">

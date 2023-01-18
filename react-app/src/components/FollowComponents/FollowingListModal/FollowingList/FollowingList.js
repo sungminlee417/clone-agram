@@ -23,7 +23,7 @@ const FollowingList = ({ user, onClose }) => {
       <header className="follow-list-header">
         <div>Following</div>
         <button className="follow-list-escape" onClick={onClose}>
-          <i className="fa-solid fa-x"></i>
+          <i className="fa-solid fa-xmark"></i>
         </button>
       </header>
       <div className="follow-list">
