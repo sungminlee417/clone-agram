@@ -136,6 +136,7 @@
   color: rgb(168, 168, 168);
   font-size: 1.4rem;
   font-weight: lighter;
+  text-align: center;
 }
 
 .direct-messaging-direct-inbox-default-button {
@@ -152,7 +153,7 @@
   opacity: 0.8;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .direct-messaging-page-container {
     flex-grow: 1;
     width: 90%;
@@ -160,6 +161,26 @@
 
   .direct-messaging-page-left {
     min-width: 22rem;
+  }
+
+  .direct-messaging-direct-inbox-default {
+    text-align: center;
+  }
+}
+
+@media (max-width: 425px) {
+  .direct-messaging-page-container {
+    flex-direction: column;
+  }
+
+  .direct-messaging-page-left {
+    border-bottom: 0.1rem solid rgb(219, 219, 219);
+    border-right: none;
+    height: 35%;
+  }
+
+  .direct-messaging-page-right {
+    height: 65%;
   }
 
   .direct-messaging-direct-inbox-default {

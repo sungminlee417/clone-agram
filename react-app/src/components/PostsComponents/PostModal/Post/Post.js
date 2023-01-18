@@ -28,6 +28,9 @@ const Post = ({ post, onClose }) => {
       className="single-post-container"
       onClick={(e) => e.stopPropagation()}
     >
+      <button onClick={onClose} className="single-post-close-button">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
       <Swiper
         cssMode={true}
         navigation={{

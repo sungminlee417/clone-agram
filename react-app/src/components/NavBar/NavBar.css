@@ -140,7 +140,7 @@
 
 /* MEDIA QUERIES */
 
-@media (max-width: 1263px) {
+@media (max-width: 1024px) {
   .nav-bar {
     min-width: fit-content;
   }
@@ -148,26 +148,12 @@
   .nav-link-text {
     display: none;
   }
-
-  .homepage-link {
-    width: auto;
-  }
-
-  /* .homepage-link-logo {
-    background-color: white;
-    background-image: url("https://cloneagram.s3.us-west-1.amazonaws.com/5ecec78673e4440004f09e77.png") !important;
-    background-position: 50%;
-    background-size: 2.4rem;
-    height: 100%;
-  } */
-
-  .nav-bar-link {
-    width: auto;
-  }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .nav-bar {
+    border-right: none;
+    border-bottom: 0.1rem solid rgb(219, 219, 219);
     flex-direction: row;
     padding: 2.4rem;
     width: 100%;
@@ -175,5 +161,15 @@
 
   .nav-links-container {
     flex-direction: row;
+  }
+}
+
+@media (max-width: 425px) {
+  .nav-bar {
+    padding: 1rem 0.5rem;
+  }
+
+  .nav-links-container {
+    gap: 0.6rem;
   }
 }

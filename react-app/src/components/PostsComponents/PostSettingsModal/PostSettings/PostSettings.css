@@ -25,3 +25,9 @@
   height: 0.1rem;
   width: 100%;
 }
+
+@media (max-width: 425px) {
+  .post-settings-button {
+    padding: 1.8rem 10rem;
+  }
+}

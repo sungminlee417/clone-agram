@@ -7,6 +7,15 @@
   width: 100%;
 }
 
+.single-post-close-button {
+  color: white;
+  cursor: pointer;
+  font-size: 2.4rem;
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+}
+
 .single-post-content-swiper {
   width: 100%;
 }
@@ -110,7 +119,7 @@
 
 /* MEDIA QUERIES */
 
-@media (max-width: 1263px) {
+@media (max-width: 1024px) {
   .single-post-description-container {
     width: 38rem;
     max-width: 38rem;
@@ -118,7 +127,15 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
+  .single-post-container {
+    height: 90%;
+  }
+  .single-post-close-button {
+    right: 1.2rem;
+    top: 1.2rem;
+  }
+
   .single-post-content-swiper {
     width: 100%;
     height: 50%;

@@ -58,3 +58,9 @@
 .edit-post-form-submit:active {
   color: #77a7ff;
 }
+
+@media (max-width: 425px) {
+  .edit-post-form {
+    width: 30rem;
+  }
+}

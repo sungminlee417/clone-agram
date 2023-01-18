@@ -1,7 +1,7 @@
 .profile-settings-nav-bar {
   border-right: 0.1rem solid rgb(219, 219, 219);
   height: 100%;
-  width: 22rem;
+  width: 20%;
 }
 
 .profile-settings-nav-bar-container {
@@ -31,4 +31,30 @@
 .profile-settings-nav-bar-link.active:hover {
   background-color: white;
   border-left: 0.2rem solid black;
+}
+
+@media (max-width: 425px) {
+  .profile-settings-nav-bar {
+    border-bottom: 0.1rem solid rgb(219, 219, 219);
+    border-right: none;
+    height: fit-content;
+    width: 100%;
+  }
+
+  .profile-settings-nav-bar-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .profile-settings-nav-bar-link {
+    border-bottom: 0.2rem solid transparent;
+    border-left: none !important;
+    width: fit-content;
+  }
+
+  .profile-settings-nav-bar-link.active {
+    border-bottom: 0.2rem solid black;
+    border-left: none !important;
+    font-weight: normal;
+  }
 }

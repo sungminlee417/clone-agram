@@ -40,6 +40,7 @@
 }
 
 .modal-content-post {
+  align-items: center;
   display: flex;
   height: 95%;
   justify-content: center;
@@ -47,7 +48,7 @@
   z-index: 1;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .modal-content-create-post {
     width: 85%;
   }

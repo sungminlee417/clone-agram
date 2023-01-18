@@ -147,3 +147,9 @@
   color: rgb(0, 149, 246);
   cursor: pointer;
 }
+
+@media (max-width: 425px) {
+  .following-post-content-container {
+    width: 30rem;
+  }
+}

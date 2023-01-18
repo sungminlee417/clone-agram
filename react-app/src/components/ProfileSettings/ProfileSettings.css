@@ -13,3 +13,9 @@
   margin: 6rem 0;
   width: 95%;
 }
+
+@media (max-width: 425px) {
+  .profile-settings-container {
+    flex-direction: column;
+  }
+}

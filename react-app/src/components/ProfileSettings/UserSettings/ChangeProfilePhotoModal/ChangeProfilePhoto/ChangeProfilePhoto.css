@@ -41,3 +41,14 @@
 .change-profile-photo-header-text-button.cancel {
   color: black;
 }
+
+@media (max-width: 425px) {
+  .change-profile-photo-container {
+    height: fit-content;
+    width: 30rem;
+  }
+
+  .change-profile-photo-header-text-button {
+    padding: 1.8rem 4rem;
+  }
+}

@@ -22,7 +22,7 @@ const PostSettingsModal = ({ post, onClose }) => {
         <Modal onClose={() => setShowModal(false)} showModal={showModal}>
           <PostSettings
             post={post}
-            onClose={onClose}
+            onClose={onClose ? onClose : () => setShowModal(false)}
             onClosePost={() => setShowModal(false)}
           />
         </Modal>

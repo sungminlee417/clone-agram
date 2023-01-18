@@ -72,3 +72,10 @@
   font-weight: bold;
   padding: 0.5rem 1.2rem;
 }
+
+@media (max-width: 425px) {
+  .follow-list-container {
+    min-height: 30rem;
+    min-width: 30rem;
+  }
+}

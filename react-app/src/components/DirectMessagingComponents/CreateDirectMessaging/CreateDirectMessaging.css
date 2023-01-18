@@ -158,3 +158,10 @@
 .create-direct-messaging-search-friend-check.selected {
   display: block;
 }
+
+@media (max-width: 425px) {
+  .create-direct-messaging-section {
+    height: 48rem;
+    width: 30rem;
+  }
+}

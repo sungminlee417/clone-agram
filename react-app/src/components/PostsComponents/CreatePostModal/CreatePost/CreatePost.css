@@ -141,6 +141,7 @@
 .create-post-photo-preview-image-container {
   display: flex;
   overflow-x: scroll;
+  overflow-y: hidden;
   gap: 1rem;
 }
 
@@ -216,4 +217,21 @@
   padding: 1rem;
   resize: none;
   width: 100%;
+}
+
+@media (max-width: 425px) {
+  .create-post-input-container {
+    flex-direction: column;
+  }
+
+  .create-post-image-input-container {
+    border-bottom: 0.1rem solid rgb(219, 219, 219);
+    border-right: none;
+    height: 80%;
+    width: 100%;
+  }
+
+  .create-post-description-input {
+    padding: 1.5rem;
+  }
 }

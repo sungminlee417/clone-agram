@@ -1,5 +1,6 @@
 .user-settings-section {
   margin: 3.2rem 0;
+  width: 80%;
 }
 
 .user-settings-header {
@@ -81,14 +82,32 @@
   pointer-events: all;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 425px) {
+  .user-settings-header {
+    padding: 0 4rem;
+  }
   .user-settings-input-label {
     font-size: 1rem;
-    width: 20%;
-    padding-right: 1rem;
+    text-align: left;
+    width: 100%;
+  }
+
+  .user-settings-input-label-container {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.6rem;
   }
 
   .user-settings-input {
-    width: 75%;
+    width: 100%;
+  }
+
+  .user-settings-container {
+    gap: 1rem;
+    padding: 0 4rem;
+  }
+
+  .user-settings-error {
+    padding-left: 0;
   }
 }

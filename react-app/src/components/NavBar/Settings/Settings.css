@@ -57,9 +57,8 @@
   border-top-right-radius: 0.4rem;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .settings-box {
-    /* left: 50rem; */
     top: 7rem;
     right: 3rem;
     left: auto;

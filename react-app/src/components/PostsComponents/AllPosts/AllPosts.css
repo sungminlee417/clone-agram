@@ -15,16 +15,16 @@
   height: fit-content;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .all-posts-container {
-    gap: 0.6rem;
+    gap: 0.5rem;
     padding: 2rem;
   }
 }
 
-@media (max-width: 530px) {
+@media (max-width: 425px) {
   .all-posts-container {
-    gap: 0.4rem;
-    padding: 2rem;
+    gap: 0.1rem;
+    padding: 0;
   }
 }

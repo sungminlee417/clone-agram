@@ -93,7 +93,7 @@
 
 /* MEDIA QUERIES */
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .search-bar-container {
     animation: container-slide-in-down 0.2s;
     border-radius: 1rem;
@@ -107,5 +107,15 @@
 
   .search-bar-input {
     margin: 1.4rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .search-bar-container {
+    height: 26rem;
+    top: 6.5rem;
+    left: 2.5rem;
+    right: 0;
+    width: 28rem;
   }
 }

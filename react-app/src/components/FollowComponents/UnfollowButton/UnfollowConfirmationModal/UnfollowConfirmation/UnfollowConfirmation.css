@@ -39,3 +39,13 @@
 .unfollow-confirmation-button.delete {
   color: rgb(237, 73, 86);
 }
+
+@media (max-width: 425px) {
+  .unfollow-confirmation-header {
+    padding: 1.8rem 1.2rem;
+  }
+
+  .unfollow-confirmation-button {
+    padding: 1.8rem 4rem;
+  }
+}

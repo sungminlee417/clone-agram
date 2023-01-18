@@ -62,29 +62,19 @@
   padding-bottom: 1rem;
 }
 
-@media (max-width: 1263px) {
+@media (max-width: 768px) {
   .post-container {
-    height: 20rem;
-    width: 20rem;
-  }
-}
-
-@media (max-width: 767px) {
-  .post-container {
-    height: 16rem;
-    width: 16rem;
+    height: 24rem;
+    width: 24rem;
   }
   .post-comment-like-count {
     font-size: 1.6rem;
   }
 }
 
-@media (max-width: 530px) {
+@media (max-width: 425px) {
   .post-container {
-    height: 14rem;
-    width: 14rem;
-  }
-  .post-comment-like-count {
-    font-size: 1.2rem;
+    height: 10.5rem;
+    width: 10.5rem;
   }
 }
