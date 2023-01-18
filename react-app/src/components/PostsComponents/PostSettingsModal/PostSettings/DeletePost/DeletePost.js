@@ -5,8 +5,6 @@ import "./DeletePost.css";
 const DeletePost = ({ post, onClose, onClosePost }) => {
   const dispatch = useDispatch();
 
-  console.log(onClose);
-
   const onDelete = async () => {
     await dispatch(deletePostThunk(post.id)).then(() => {
       if (onClose) {
