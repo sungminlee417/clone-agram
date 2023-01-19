@@ -37,11 +37,14 @@ ERROR COLOR: rgb(237, 73, 86)
 html {
   font-size: 62.5%;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 body {
   background-color: rgb(250, 250, 250);
   font-family: "Rubik", sans-serif;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 /* #root {

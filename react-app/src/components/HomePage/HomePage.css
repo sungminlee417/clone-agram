@@ -1,7 +1,6 @@
 .home-page {
   display: flex;
   height: 100vh;
-  overflow-y: hidden;
 }
 
 /* MEDIA QUERIES */
