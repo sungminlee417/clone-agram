@@ -2,7 +2,7 @@
   display: flex;
   flex-grow: 1;
   justify-content: center;
-  overflow-y: scroll;
+  margin-left: 23.4rem;
   overflow-x: hidden;
   width: 100%;
 }
@@ -11,11 +11,21 @@
   display: grid;
   gap: 2.4rem;
   grid-template-columns: 1fr 1fr 1fr;
-  padding: 12rem;
+  padding: 12rem 0;
   height: fit-content;
 }
 
+@media (max-width: 1024px) {
+  .all-posts-section {
+    margin-left: 6.8rem;
+  }
+}
+
 @media (max-width: 768px) {
+  .all-posts-section {
+    margin: 6rem 0 2rem 0;
+  }
+
   .all-posts-container {
     gap: 0.5rem;
     padding: 2rem;
@@ -23,6 +33,10 @@
 }
 
 @media (max-width: 425px) {
+  .all-posts-section {
+    margin: 6rem 0 2rem 0;
+  }
+
   .all-posts-container {
     gap: 0.1rem;
     padding: 0;

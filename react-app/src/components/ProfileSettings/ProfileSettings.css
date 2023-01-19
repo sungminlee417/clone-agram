@@ -1,7 +1,9 @@
 .profile-settings-section {
   display: flex;
   flex-grow: 1;
+  height: 100vh;
   justify-content: center;
+  margin-left: 23.4rem;
   overflow-y: scroll;
   width: 100%;
 }
@@ -12,6 +14,18 @@
   display: flex;
   margin: 6rem 0;
   width: 95%;
+}
+
+@media (max-width: 1024px) {
+  .profile-settings-section {
+    margin-left: 6.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-settings-section {
+    margin: 6rem 0 2rem 0;
+  }
 }
 
 @media (max-width: 425px) {

@@ -1,5 +1,6 @@
 .following-posts-section {
-  padding: 2rem 0;
+  margin: 2rem 0;
+  margin-left: 23.4rem;
   overflow-x: hidden;
   overflow-y: scroll;
   width: 100%;
@@ -12,4 +13,22 @@
   gap: 2rem;
   height: 100%;
   width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .following-posts-section {
+    margin-left: 6.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .following-posts-section {
+    margin: 9rem 0 2rem 0;
+  }
+}
+
+@media (max-width: 425px) {
+  .following-posts-section {
+    margin: 8rem 0 2rem 0;
+  }
 }

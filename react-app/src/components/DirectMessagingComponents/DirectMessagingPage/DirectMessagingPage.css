@@ -1,10 +1,18 @@
+.direct-messaging-page-section {
+  display: flex;
+  justify-content: center;
+  margin-left: 23.4rem;
+  height: 100vh;
+  width: 100%;
+}
+
 .direct-messaging-page-container {
   background-color: white;
   border: 0.1rem solid rgb(219, 219, 219);
   border-radius: 1rem;
   display: flex;
-  margin: 2rem auto;
-  width: 65%;
+  margin: 6rem 0;
+  width: 80%;
 }
 
 .direct-messaging-page-left {
@@ -153,10 +161,16 @@
   opacity: 0.8;
 }
 
+@media (max-width: 1024px) {
+  .direct-messaging-page-section {
+    margin-left: 6.8rem;
+  }
+}
+
 @media (max-width: 768px) {
-  .direct-messaging-page-container {
-    flex-grow: 1;
-    width: 90%;
+  .direct-messaging-page-section {
+    margin: 0;
+    padding: 6rem 0 0 0;
   }
 
   .direct-messaging-page-left {

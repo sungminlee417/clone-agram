@@ -1,6 +1,7 @@
 .nav-bar-section {
   display: flex;
-  position: relative;
+  position: fixed;
+  height: 100%;
   z-index: 2;
 }
 
@@ -151,12 +152,17 @@
 }
 
 @media (max-width: 768px) {
+  .nav-bar-section {
+    height: fit-content;
+  }
+
   .nav-bar {
     border-right: none;
     border-bottom: 0.1rem solid rgb(219, 219, 219);
     flex-direction: row;
-    padding: 2.4rem;
-    width: 100%;
+    height: fit-content;
+    padding: 1rem 2.4rem;
+    width: 100vw;
   }
 
   .nav-links-container {

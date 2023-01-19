@@ -58,3 +58,9 @@
   padding: 1rem 2rem;
   width: 75%;
 }
+
+@media (max-width: 425px) {
+  .signup-form-container {
+    width: 30rem;
+  }
+}

@@ -1,6 +1,7 @@
 .all-user-posts-section {
   display: flex;
   justify-content: center;
+  margin-left: 23.4rem;
   overflow-y: scroll;
   overflow-x: hidden;
   width: 100%;
@@ -81,7 +82,17 @@
   width: fit-content;
 }
 
+@media (max-width: 1024px) {
+  .all-user-posts-section {
+    margin-left: 6.8rem;
+  }
+}
+
 @media (max-width: 768px) {
+  .all-user-posts-section {
+    margin: 6rem 0 2rem 0;
+  }
+
   .all-user-posts-container {
     gap: 1.6rem;
   }
