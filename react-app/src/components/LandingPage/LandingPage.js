@@ -82,6 +82,14 @@ const LandingPage = () => {
       >
         <i className="fa-brands fa-linkedin"></i>
       </a>
+      <a
+        href="https://sungminlee.com"
+        className="landing-page-portfolio"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <i className="fa-solid fa-user"></i>
+      </a>
     </section>
   );
 };
