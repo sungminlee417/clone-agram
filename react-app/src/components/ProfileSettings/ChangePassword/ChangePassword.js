@@ -20,7 +20,7 @@ const ChangePassword = () => {
         submitButton.classList.remove("enabled");
       }
     }
-  }, [oldPassword, newPassword, confirmPassword]);
+  }, [oldPassword, newPassword, confirmPassword, currentUser.id]);
 
   const onSubmit = async () => {
     await dispatch(

@@ -23,7 +23,7 @@ const UserSettings = () => {
         submitButton.classList.add("enabled");
       }
     }
-  }, [changed]);
+  }, [changed, currentUser.id]);
 
   const onSubmit = async () => {
     const postData = new FormData();
