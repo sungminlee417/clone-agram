@@ -1,6 +1,19 @@
 .user-settings-section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   margin: 3.2rem 0;
-  width: 80%;
+  width: 100%;
+}
+
+.user-settings-demo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.user-settings-container {
+  align-self: flex-start;
 }
 
 .user-settings-header {

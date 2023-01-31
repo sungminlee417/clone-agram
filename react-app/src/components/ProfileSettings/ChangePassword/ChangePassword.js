@@ -12,11 +12,13 @@ const ChangePassword = () => {
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
-    const submitButton = document.querySelector(".change-password-submit");
-    if ((oldPassword, newPassword, confirmPassword)) {
-      submitButton.classList.add("enabled");
-    } else {
-      submitButton.classList.remove("enabled");
+    if (currentUser.id !== 1) {
+      const submitButton = document.querySelector(".change-password-submit");
+      if ((oldPassword, newPassword, confirmPassword)) {
+        submitButton.classList.add("enabled");
+      } else {
+        submitButton.classList.remove("enabled");
+      }
     }
   }, [oldPassword, newPassword, confirmPassword]);
 
@@ -39,73 +41,89 @@ const ChangePassword = () => {
 
   return (
     <div className="change-password-section">
-      <div className="change-password-header">
-        <img
-          className="change-password-photo"
-          src={currentUser.profileImg}
-          alt="user profile"
-        />
-        <div className="change-password-header-username">
-          {currentUser.username}
+      {currentUser.id === 1 ? (
+        <div className="change-password-demo">
+          Demo user's settings cannot be modified
         </div>
-      </div>
-      <div className="change-password-inputs-container">
-        <div className="change-password-inputs-error-container">
-          <div className="change-password-input-label-container">
-            <label className="change-password-input-label">Old password</label>
-            <input
-              className="change-password-input"
-              onChange={(e) => setOldPassword(e.target.value)}
-              type="password"
-              value={oldPassword}
+      ) : (
+        <div className="change-password-container">
+          <div className="change-password-header">
+            <img
+              className="change-password-photo"
+              src={currentUser.profileImg}
+              alt="user profile"
             />
-          </div>
-          {errors.old_password && (
-            <div className="change-password-error">{errors.old_password}</div>
-          )}
-        </div>
-
-        <div className="change-password-inputs-error-container">
-          <div className="change-password-input-label-container">
-            <label className="change-password-input-label">New password</label>
-            <input
-              className="change-password-input"
-              onChange={(e) => setNewPassword(e.target.value)}
-              type="password"
-              value={newPassword}
-            />
-          </div>
-          {errors.new_password && (
-            <div className="change-password-error">{errors.new_password}</div>
-          )}
-        </div>
-
-        <div className="change-password-inputs-error-container">
-          <div className="change-password-input-label-container">
-            <label className="change-password-input-label">
-              Confirm new password
-            </label>
-            <input
-              className="change-password-input"
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              type="password"
-              value={confirmPassword}
-            />
-          </div>
-          {errors.confirm_password && (
-            <div className="change-password-error">
-              {errors.confirm_password}
+            <div className="change-password-header-username">
+              {currentUser.username}
             </div>
-          )}
-        </div>
+          </div>
+          <div className="change-password-inputs-container">
+            <div className="change-password-inputs-error-container">
+              <div className="change-password-input-label-container">
+                <label className="change-password-input-label">
+                  Old password
+                </label>
+                <input
+                  className="change-password-input"
+                  onChange={(e) => setOldPassword(e.target.value)}
+                  type="password"
+                  value={oldPassword}
+                />
+              </div>
+              {errors.old_password && (
+                <div className="change-password-error">
+                  {errors.old_password}
+                </div>
+              )}
+            </div>
 
-        <div className="change-password-input-label-container">
-          <div className="change-password-input-label"></div>
-          <button className="change-password-submit" onClick={onSubmit}>
-            Confirm password
-          </button>
+            <div className="change-password-inputs-error-container">
+              <div className="change-password-input-label-container">
+                <label className="change-password-input-label">
+                  New password
+                </label>
+                <input
+                  className="change-password-input"
+                  onChange={(e) => setNewPassword(e.target.value)}
+                  type="password"
+                  value={newPassword}
+                />
+              </div>
+              {errors.new_password && (
+                <div className="change-password-error">
+                  {errors.new_password}
+                </div>
+              )}
+            </div>
+
+            <div className="change-password-inputs-error-container">
+              <div className="change-password-input-label-container">
+                <label className="change-password-input-label">
+                  Confirm new password
+                </label>
+                <input
+                  className="change-password-input"
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  type="password"
+                  value={confirmPassword}
+                />
+              </div>
+              {errors.confirm_password && (
+                <div className="change-password-error">
+                  {errors.confirm_password}
+                </div>
+              )}
+            </div>
+
+            <div className="change-password-input-label-container">
+              <div className="change-password-input-label"></div>
+              <button className="change-password-submit" onClick={onSubmit}>
+                Confirm password
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

@@ -17,9 +17,11 @@ const UserSettings = () => {
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
-    const submitButton = document.querySelector(".user-settings-submit");
-    if (changed && submitButton) {
-      submitButton.classList.add("enabled");
+    if (currentUser.id !== 1) {
+      const submitButton = document.querySelector(".user-settings-submit");
+      if (changed && submitButton) {
+        submitButton.classList.add("enabled");
+      }
     }
   }, [changed]);
 
@@ -40,85 +42,93 @@ const UserSettings = () => {
 
   return (
     <div className="user-settings-section">
-      <div className="user-settings-header">
-        <ChangeProfilePhotoModal
-          type="photo"
-          currentUser={currentUser}
-          profileImage={profileImage}
-          setProfileImage={setProfileImage}
-          setChanged={setChanged}
-        />
-        <div className="user-settings-header-user-info">
-          <div className="user-settings-header-username">
-            {currentUser.username}
-          </div>
-          <ChangeProfilePhotoModal
-            type="button"
-            currentUser={currentUser}
-            setProfileImage={setProfileImage}
-            setChanged={setChanged}
-          />
+      {currentUser.id === 1 ? (
+        <div className="user-settings-demo">
+          Demo user's settings cannot be modified
         </div>
-      </div>
-      <div className="user-settings-container">
-        <div className="user-settings-input-error-container">
-          <div className="user-settings-input-label-container">
-            <label className="user-settings-input-label">Name</label>
-            <input
-              className="user-settings-input"
-              onChange={(e) => {
-                setName(e.target.value);
-                setChanged(true);
-              }}
-              placeholder="Name"
-              value={name}
+      ) : (
+        <div className="user-settings-container">
+          <div className="user-settings-header">
+            <ChangeProfilePhotoModal
+              type="photo"
+              currentUser={currentUser}
+              profileImage={profileImage}
+              setProfileImage={setProfileImage}
+              setChanged={setChanged}
             />
+            <div className="user-settings-header-user-info">
+              <div className="user-settings-header-username">
+                {currentUser.username}
+              </div>
+              <ChangeProfilePhotoModal
+                type="button"
+                currentUser={currentUser}
+                setProfileImage={setProfileImage}
+                setChanged={setChanged}
+              />
+            </div>
           </div>
-          {errors.name && (
-            <div className="user-settings-error">{errors.name}</div>
-          )}
-        </div>
-        <div className="user-settings-input-error-container">
-          <div className="user-settings-input-label-container">
-            <label className="user-settings-input-label">Username</label>
-            <input
-              className="user-settings-input"
-              onChange={(e) => {
-                setUsername(e.target.value);
-                setChanged(true);
-              }}
-              placeholder="Username"
-              value={username}
-            />
+          <div className="user-settings-container">
+            <div className="user-settings-input-error-container">
+              <div className="user-settings-input-label-container">
+                <label className="user-settings-input-label">Name</label>
+                <input
+                  className="user-settings-input"
+                  onChange={(e) => {
+                    setName(e.target.value);
+                    setChanged(true);
+                  }}
+                  placeholder="Name"
+                  value={name}
+                />
+              </div>
+              {errors.name && (
+                <div className="user-settings-error">{errors.name}</div>
+              )}
+            </div>
+            <div className="user-settings-input-error-container">
+              <div className="user-settings-input-label-container">
+                <label className="user-settings-input-label">Username</label>
+                <input
+                  className="user-settings-input"
+                  onChange={(e) => {
+                    setUsername(e.target.value);
+                    setChanged(true);
+                  }}
+                  placeholder="Username"
+                  value={username}
+                />
+              </div>
+              {errors.username && (
+                <div className="user-settings-error">{errors.username}</div>
+              )}
+            </div>
+            <div className="user-settings-input-error-container">
+              <div className="user-settings-input-label-container">
+                <label className="user-settings-input-label">Email</label>
+                <input
+                  className="user-settings-input"
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    setChanged(true);
+                  }}
+                  placeholder="Email"
+                  value={email}
+                />
+              </div>
+              {errors.email && (
+                <div className="user-settings-error">{errors.email}</div>
+              )}
+            </div>
+            <div className="user-settings-input-label-container">
+              <div className="user-settings-input-label"></div>
+              <button className="user-settings-submit" onClick={onSubmit}>
+                Submit
+              </button>
+            </div>
           </div>
-          {errors.username && (
-            <div className="user-settings-error">{errors.username}</div>
-          )}
         </div>
-        <div className="user-settings-input-error-container">
-          <div className="user-settings-input-label-container">
-            <label className="user-settings-input-label">Email</label>
-            <input
-              className="user-settings-input"
-              onChange={(e) => {
-                setEmail(e.target.value);
-                setChanged(true);
-              }}
-              placeholder="Email"
-              value={email}
-            />
-          </div>
-          {errors.email && (
-            <div className="user-settings-error">{errors.email}</div>
-          )}
-        </div>
-        <div className="user-settings-input-label-container">
-          <div className="user-settings-input-label"></div>
-          <button className="user-settings-submit" onClick={onSubmit}>
-            Submit
-          </button>
-        </div>
-      </div>
+      )}
     </div>
   );
 };
