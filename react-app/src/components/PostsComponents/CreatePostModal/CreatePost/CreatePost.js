@@ -171,7 +171,7 @@ const CreatePost = ({ onClose }) => {
                 {multipleButtonClicked && (
                   <div className="create-post-photo-multiple-menu-container">
                     <div className="create-post-photo-preview-image-container">
-                      {Object.values(content).map((image) => {
+                      {Object.values(content).map((image, i) => {
                         return (
                           <div
                             key={image.id}

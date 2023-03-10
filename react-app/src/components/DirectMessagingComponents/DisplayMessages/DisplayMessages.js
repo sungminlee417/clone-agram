@@ -158,7 +158,7 @@ const DisplayMessages = () => {
             </div>
           )}
           <div className="display-message-header-user-name-container">
-            {Object.values(directMessage.members).map((member) => {
+            {Object.values(directMessage.members).map((member, i) => {
               if (member.user.id !== currentUser.id) {
                 return (
                   <div
