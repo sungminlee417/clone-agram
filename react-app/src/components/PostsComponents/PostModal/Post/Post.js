@@ -54,9 +54,12 @@ const Post = ({ post, onClose }) => {
           swiper.navigation.update();
         }}
       >
-        {Object.values(post.images).map((image, i) => {
+        {Object.values(post.images).map((image) => {
           return (
-            <SwiperSlide className="single-post-content-container" key={i}>
+            <SwiperSlide
+              className="single-post-content-container"
+              key={image.id}
+            >
               <img
                 className="single-post-content"
                 src={image.imageUrl}

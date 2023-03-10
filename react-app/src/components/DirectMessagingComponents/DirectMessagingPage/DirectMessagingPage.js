@@ -37,12 +37,12 @@ const DirectMessagingPage = () => {
             </button>
           </header>
           <div className="direct-messaging-messages">
-            {directMessagesArray.map((directMessage, i) => {
+            {directMessagesArray.map((directMessage) => {
               delete directMessage.members[currentUser.id];
               return (
                 <NavLink
                   className="direct-messaging-message-link"
-                  key={i}
+                  key={directMessage.id}
                   to={`/direct/${directMessage.id}`}
                 >
                   {Object.values(directMessage.members).length > 1 ? (
@@ -77,12 +77,12 @@ const DirectMessagingPage = () => {
                     </div>
                   )}
                   <div className="direct-messaging-message-user-name-container">
-                    {Object.values(directMessage.members).map((member, i) => {
+                    {Object.values(directMessage.members).map((member) => {
                       if (member.user.id !== currentUser.id) {
                         return (
                           <div
                             className="direct-messaging-message-user-container"
-                            key={i}
+                            key={member.id}
                           >
                             <div className="direct-messaging-message-user-name">
                               {i === 0 && `${member.user.name}`}

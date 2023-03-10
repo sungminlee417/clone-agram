@@ -28,9 +28,9 @@ const FollowerList = ({ user, followers, onClose }) => {
         </button>
       </header>
       <div className="user-list">
-        {Object.values(followers).map((followerUser, i) => {
+        {Object.values(followers).map((followerUser) => {
           return (
-            <div key={i} className="user-list-link-container">
+            <div key={followerUser.id} className="user-list-link-container">
               <NavLink
                 className="user-list-link"
                 to={`/${followerUser.username}`}

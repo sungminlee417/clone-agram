@@ -35,9 +35,9 @@ const PostModalComments = ({ post }) => {
 
   return (
     <section className="post-modal-comments-section">
-      {comments.map((comment, i) => {
+      {comments.map((comment) => {
         return (
-          <div className="post-modal-comment-container" key={i}>
+          <div className="post-modal-comment-container" key={comment.id}>
             <div className="post-modal-comment-content-container">
               <NavLink to={`/${comment.owner.username}`}>
                 <img

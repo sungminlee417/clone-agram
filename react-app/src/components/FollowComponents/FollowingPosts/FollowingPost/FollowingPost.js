@@ -111,9 +111,12 @@ const FollowingPost = ({ post, key }) => {
             swiper.navigation.update();
           }}
         >
-          {Object.values(post.images).map((image, i) => {
+          {Object.values(post.images).map((image) => {
             return (
-              <SwiperSlide className="following-post-swiper-container" key={i}>
+              <SwiperSlide
+                className="following-post-swiper-container"
+                key={image.id}
+              >
                 <img
                   className="following-post-content"
                   src={image.imageUrl}

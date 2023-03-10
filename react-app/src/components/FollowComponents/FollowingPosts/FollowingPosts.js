@@ -25,9 +25,9 @@ const FollowingPosts = () => {
   return (
     <section className="following-posts-section">
       <div className="following-posts-container">
-        {posts.reverse().map((post, i) => {
+        {posts.reverse().map((post) => {
           return (
-            <div key={i}>
+            <div key={post.id}>
               <FollowingPost post={post} />
             </div>
           );

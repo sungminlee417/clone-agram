@@ -158,10 +158,13 @@ const DisplayMessages = () => {
             </div>
           )}
           <div className="display-message-header-user-name-container">
-            {Object.values(directMessage.members).map((member, i) => {
+            {Object.values(directMessage.members).map((member) => {
               if (member.user.id !== currentUser.id) {
                 return (
-                  <div className="display-message-user-container" key={i}>
+                  <div
+                    className="display-message-user-container"
+                    key={member.id}
+                  >
                     <div className="display-message-user-name">
                       {i === 0 && `${member.user.name}`}
                       {Object.values(directMessage.members).length - 1 === i &&
@@ -196,13 +199,13 @@ const DisplayMessages = () => {
           {header()}
           <div className="display-messages-container">
             <div className="display-messages-all-messages">
-              {Object.values(messages).map((message, i) => {
+              {Object.values(messages).map((message) => {
                 if (message.user) {
                   if (message.user.id === currentUser.id) {
                     return (
                       <div
                         className="display-message-container-current-user"
-                        key={i}
+                        key={message.id}
                       >
                         <div
                           className={`display-message-container-current-user-settings-container display-message-container-current-user-settings-container-${i}`}
@@ -310,6 +313,7 @@ const DisplayMessages = () => {
                     <NavLink
                       className="display-message-details-member"
                       to={`/${member.user.username}`}
+                      key={member.id}
                     >
                       <img
                         className="display-message-details-member-profile"

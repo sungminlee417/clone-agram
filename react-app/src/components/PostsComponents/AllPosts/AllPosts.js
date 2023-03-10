@@ -17,8 +17,8 @@ const AllPosts = () => {
   return (
     <section className="all-posts-section">
       <div className="all-posts-container">
-        {posts.reverse().map((post, i) => {
-          return <PostModal post={post} type="all-posts" key={i} />;
+        {posts.reverse().map((post) => {
+          return <PostModal post={post} type="all-posts" key={post.id} />;
         })}
       </div>
     </section>

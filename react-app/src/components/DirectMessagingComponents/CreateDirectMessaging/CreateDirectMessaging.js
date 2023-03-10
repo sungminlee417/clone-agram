@@ -108,11 +108,11 @@ const CreateDirectMessaging = ({ onClose }) => {
         </div>
         <div className="create-direct-messaging-selected-search-container">
           <div className="create-direct-messaging-selected-friends">
-            {Object.values(userList).map((user, i) => {
+            {Object.values(userList).map((user) => {
               return (
                 <div
                   className="create-direct-messaging-selected-friend"
-                  key={i}
+                  key={user.id}
                 >
                   <div>{user.username}</div>
                   <button onClick={() => selectFriend(user)}>
@@ -133,12 +133,12 @@ const CreateDirectMessaging = ({ onClose }) => {
         </div>
       </div>
       <div className="create-direct-messaging-search-friends-list">
-        {users.map((user, i) => {
+        {users.map((user) => {
           return (
             <button
               className="create-direct-messaging-search-friend-button"
               onClick={() => selectFriend(user)}
-              key={i}
+              key={user.id}
             >
               <div className="create-direct-messaging-search-friend-info">
                 <img

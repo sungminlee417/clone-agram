@@ -80,8 +80,8 @@ const UserProfile = () => {
             </div>
           </div>
           <div className="all-user-posts-container">
-            {posts.reverse().map((post, i) => {
-              return <PostModal post={post} type="all-posts" key={i} />;
+            {posts.reverse().map((post) => {
+              return <PostModal post={post} type="all-posts" key={post.id} />;
             })}
           </div>
         </div>

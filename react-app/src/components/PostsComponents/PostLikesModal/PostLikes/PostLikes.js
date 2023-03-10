@@ -21,9 +21,9 @@ const PostLikes = ({ likes, onClose }) => {
         </button>
       </header>
       <div className="user-list">
-        {Object.values(likes).map((like, i) => {
+        {Object.values(likes).map((like) => {
           return (
-            <div key={i} className="user-list-link-container">
+            <div key={like.id} className="user-list-link-container">
               <NavLink
                 className="user-list-link"
                 to={`/${like.user.username}`}

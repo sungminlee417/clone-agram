@@ -42,6 +42,7 @@ const SearchBar = ({ closeSearch }) => {
               className="search-user-link"
               to={`/${user.username}`}
               onClick={() => closeSearch()}
+              key={user.id}
             >
               <img
                 className="search-list-user-photo"

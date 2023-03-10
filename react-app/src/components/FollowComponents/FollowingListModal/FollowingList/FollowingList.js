@@ -29,9 +29,9 @@ const FollowingList = ({ user, onClose }) => {
       <div className="follow-list">
         {Object.values(
           currentUser.id === user.id ? followings : user.followings
-        ).map((following, i) => {
+        ).map((following) => {
           return (
-            <div key={i} className="follow-list-link-container">
+            <div key={following.id} className="follow-list-link-container">
               <NavLink
                 className="follow-list-link"
                 to={`/${
