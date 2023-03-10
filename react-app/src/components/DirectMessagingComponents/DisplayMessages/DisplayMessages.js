@@ -199,7 +199,7 @@ const DisplayMessages = () => {
           {header()}
           <div className="display-messages-container">
             <div className="display-messages-all-messages">
-              {Object.values(messages).map((message) => {
+              {Object.values(messages).map((message, i) => {
                 if (message.user) {
                   if (message.user.id === currentUser.id) {
                     return (
